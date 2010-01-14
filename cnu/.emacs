@@ -65,7 +65,7 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-ring-save)
- 
+(global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1))) 
 
 (defun swap-windows ()
   "If you have 2 windows, it swaps them."
@@ -109,8 +109,8 @@
 (load "p4-hacks")
 
 ;(setq tags-file-name "/export/web/TAGS")
-;(setq tags-file-name "/export/bug/69338/TAGS")
-(setq tags-file-name "/export/bug/122534/TAGS")
+(setq tags-file-name "/export/bug/69338/TAGS")
+
 
 ;;--------Ruby stuff-------------------------------------
 (require 'inf-ruby)
