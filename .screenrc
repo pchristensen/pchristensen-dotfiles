@@ -5,7 +5,12 @@ escape ^Zz
 
 vbell off 
 
+autodetatch on
+
+defscrollback 30000
+
 # Default Screens
 screen -t shell 0
-screen -t emacs 1 emacsclient -t
-#screen -t vmware 2 sudo vmware start
+screen -t shell 1
+screen -t emacs 2 emacsclient -t
+
