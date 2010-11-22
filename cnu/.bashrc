@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything
+#˘ If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -114,9 +114,11 @@ export PATH=$PATH:.
 alias ll="ls -l"
 alias la="ls -lA"
 
-export P4CONFIG=~/.p4config
-export P4EDITOR="emacsclient -t -a emacs -nw"
-
 alias ack='ack-grep'
 alias rack='ack-grep --ruby --follow'
 alias aack='ack-grep --all'
+
+alias gs="git status"
+alias gc="git commit -m "
+alias gl="git log"
+alias ga="git add"
