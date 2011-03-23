@@ -147,7 +147,7 @@ if [[ -n "$PS1" ]] ; then
   alias gco="git checkout -b "
   alias gbl="git branch -l"
 
-  . ~/emacs/site-lisp/z.sh
+  . ~/dotfiles/z.sh
 
   function prompt {
       local LIGHT_RED="\[\033[1;31m\]"
@@ -156,7 +156,7 @@ if [[ -n "$PS1" ]] ; then
 
       local TITLEBAR='\[\033]0;\u@\h\007\]'
 
-      source ~/bin/git-completion.bash
+      source ~/dotfiles/git-completion.bash
 
       export GIT_PS1_SHOWDIRTYSTATE=true
       export GIT_PS1_SHOWUNTRACKEDFILES=true
