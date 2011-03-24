@@ -113,14 +113,14 @@ if [[ -n "$PS1" ]] ; then
   
   
   
-  ## Export paths
-  export PATH=$PATH:.
-  export PATH=$PATH:/home/peter/bin
-  export PATH=$PATH:/usr/local/mysql/bin
-  export PATH=$PATH:/usr/local/bin
     ## GROUPON
     export PATH=$PATH:/Users/peterchristensen/bin/cassandra/bin
     export PATH=$PATH:/Users/peterchristensen/bin
+  ## Export paths
+  export PATH=/home/peter/bin:$PATH
+  export PATH=/usr/local/mysql/bin:$PATH
+  export PATH=/usr/local/bin:$PATH
+  export PATH=.:$PATH
 
   ## GROUPON
   alias gprep="rake db:migrate:reset;rake db:seed;rake db:test:prepare;rake spec:fixture_builder:rebuild;rake parallel:recreate CORES=4;rake log:clear"
