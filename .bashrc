@@ -139,13 +139,13 @@ if [[ -n "$PS1" ]] ; then
     # alias aack='ack --all'
 
 
-  alias gs="git status"
-  alias gc="git commit -m "
-  alias gl="git log"
-  alias ga="git add"
-  alias gd="git diff"
-  alias gco="git checkout -b "
-  alias gbl="git branch -l"
+  function g {
+    if [ $# == '0' ]; then
+      git status
+    else
+      git "$@";
+    fi
+  }
 
   . ~/dotfiles/z.sh
 
