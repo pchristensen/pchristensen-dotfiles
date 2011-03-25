@@ -39,3 +39,4 @@
   f = fetch
   r = reset
   p = push
+  y = cherry-pick
