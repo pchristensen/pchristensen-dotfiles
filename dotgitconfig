@@ -22,6 +22,8 @@
   # reset
   ## soft resets
   r = reset
+  ruc = reset --soft HEAD^
+  ruc1 = reset --soft HEAD^ 
   r1 = reset HEAD^
   r2 = reset HEAD^^
   ## hard resets
@@ -39,4 +41,5 @@
   f = fetch
   r = reset
   p = push
+  w = show
   y = cherry-pick
