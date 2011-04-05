@@ -3,6 +3,8 @@
 	email = peter@geekstack.com
 [core]
 	editor = emacs
+[color]
+	ui = auto
 
 [alias]
   # I like using the interactive mode to make complex commits

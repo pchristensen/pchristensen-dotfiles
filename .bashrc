@@ -147,6 +147,9 @@ if [[ -n "$PS1" ]] ; then
     fi
   }
 
+  # Autocomplete for 'g' as well
+  complete -o default -o nospace -F _git g
+
   . ~/dotfiles/z.sh
 
   function prompt {
