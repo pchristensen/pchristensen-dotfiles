@@ -2,7 +2,7 @@
 	name = Peter Christensen
 	email = peter@geekstack.com
 [core]
-	editor = emacs
+	editor = emacsclient -nw --alternate-editor=''
 [color]
 	ui = auto
 
