@@ -102,9 +102,11 @@ if [[ -n "$PS1" ]] ; then
   #-c -n = new window, terminal doesn't wait
   #-t = force terminal mode
   #-a <editor> = start alternate editor if emacs-daemon isn't running
-  alias emacsw="emacsclient -c -n -a emacs"
+  alias emacsw="emacsclient -c -n -a ''"
   alias emacst="emacsclient -t -a emacs"
-  
+  alias killemacs="emacsclient -e '(kill-emacs)'"
+  alias e="emacsclient -c -n -a ''"
+
   EDITOR="emacsclient -c"
   VISUAL="emacsclient -c"
   
@@ -138,6 +140,7 @@ if [[ -n "$PS1" ]] ; then
     # alias rack='ack --ruby --follow'
     # alias aack='ack --all'
 
+  alias psgrep='ps aux | grep'
 
   function g {
     if [ $# == '0' ]; then
