@@ -102,7 +102,7 @@ if [[ -n "$PS1" ]] ; then
   #-c -n = new window, terminal doesn't wait
   #-t = force terminal mode
   #-a <editor> = start alternate editor if emacs-daemon isn't running
-  alias emacsw="emacsclient -c -n -a ''"
+  alias emacsw="emacsclient -nw -a ''"
   alias emacst="emacsclient -t -a emacs"
   alias killemacs="emacsclient -e '(kill-emacs)'"
   alias e="emacsclient -c -n -a ''"
