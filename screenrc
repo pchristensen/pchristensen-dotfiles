@@ -1,0 +1,97 @@
+######## TODOS
+#### TODO Learn how to use it with multiple users
+
+######## Favorite Screen references
+#### http://www.mattcutts.com/blog/a-quick-tutorial-on-screen/
+#### http://www.mattcutts.com/blog/screen-power-tips-screenrc/
+#### https://github.com/rmm5t/dotfiles/blob/master/screenrc
+#### http://www.pixelbeat.org/lkdb/screen.html
+
+######## Key reminders
+#### Key           Action                                         Notes
+#### C-z c         new window
+#### C-z n         next window
+#### C-z p         previous window
+#### C-z [0-9]     Goto window $1
+#### C-z "         select window from list I have window list in the status line
+#### C-z C-z       previous window viewed
+
+#### C-z S         split terminal horizontally into regions       C-z c to create new window there
+#### C-z |         split terminal vertically into regions         Requires debian/ubuntu patched screen 4.0
+#### C-z :resize   resize region
+#### C-z :fit      fit screen size to new terminal size           C-z F is the same. Do after resizing xterm
+#### C-z :remove   remove region                                  C-z X is the same
+#### C-z tab       Move to next region
+
+#### C-z d         detach screen from terminal                    Start screen with -r option to reattach
+#### C-z A         set window title
+#### C-z x         lock session                                   Enter user password to unlock
+#### C-z [         enter scrollback/copy mode                     Enter to start and end copy region. C-z ] to leave this mode
+#### C-z ]         paste buffer                                   Supports pasting between windows
+#### C-z >         write paste buffer to file                     useful for copying between screens
+#### C-z <         read paste buffer from file                    useful for pasting between screens
+
+#### C-z ?         show key bindings/command names                Note unbound commands only in man page
+#### C-z :         goto screen command prompt                     up shows last command entered
+
+#### screen -S sessionname              create new named session
+#### screen -d -R sessionname           migrate existing session or create named session here
+#### screen -ls        list current sessions
+
+##################### SETTINGS ########################
+## Default Screens
+screen -t shell 0
+
+## turn off startup message
+startup_message off
+
+## change escape character
+escape ^Zz
+
+## longer scrollback
+defscrollback 30000
+
+## clear screen when exiting a full screen program
+altscreen on
+
+## Turn off visible bell/flash
+vbell off
+
+## Caption?? this might not work
+caption always “%H %c | %-w%{=}%n-%t%{-}%+w”
+
+## Configure status line
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+## from https://github.com/rmm5t/dotfiles/blob/master/screenrc
+## hardstatus alwayslastline "%{=b}%{b}%w"
+
+## autodetach
+autodetatch on
+
+## ## utf8
+## setenv LC_CTYPE en_US.UTF-8
+## defutf8 on
+
+## ## monitor activity
+## defmonitor on
+## activity "<%n>"
+## silencewait 15
+## bell_msg "DING! (%n)"
+## vbell_msg "DING! (%n)"
+## vbell on
+
+## ## scrollbars
+## termcapinfo xterm* ti@:te@
+## ## From http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
+## ## Q: My xterm scrollbar does not work with screen.
+## ## A: The problem is that xterm will not allow scrolling if the alternate text buffer is selected.
+## ##    The standard definitions of the termcap initialize capabilities ti and te switch to and from the alternate text buffer.
+## ##    (The scrollbar also does not work when you start e.g. ‘vi’). You can tell screen not to use these initialisations by
+## ##    adding the line “termcapinfo xterm ti@:te@” to your ~/.screenrc file.
+
+## ## Scrolling with wheely mouse
+## termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+## ## fix backspace
+## termcapinfo xterm* 'bc@:bs@'
