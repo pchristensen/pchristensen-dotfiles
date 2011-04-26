@@ -66,9 +66,6 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*f%t%?(%u)%
 ## from https://github.com/rmm5t/dotfiles/blob/master/screenrc
 ## hardstatus alwayslastline "%{=b}%{b}%w"
 
-## autodetach
-autodetatch on
-
 ## ## utf8
 ## setenv LC_CTYPE en_US.UTF-8
 ## defutf8 on
