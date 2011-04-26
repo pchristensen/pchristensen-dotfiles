@@ -11,16 +11,13 @@
   # I like using the interactive mode to make complex commits
   # ai = add --interactive
 
-  # All the aliases relate to commits. Note that
-  # they are grouped by common prefixes, so I don't
-  # confuse what I want done by accident.
+  # All the aliases relate to commits. Note that they are grouped by common prefixes, so I don't confuse what I want done by accident.
   c = commit
-  # commit with a message
-  cm = commit -m
-  cma = commit -a -m
+  cm = commit -m                               # commit with a message
+  cma = commit -a -m                           # commit all with message
   # amending the previous commit
   ca = commit --amend
-  caa = commit -a --amend -C HEAD
+  caa = commit -a --amend -C HEAD              # lump changes with most recent commit
 
   # reset
   ## soft resets
@@ -34,10 +31,15 @@
   rh1 = reset HEAD^ --hard
   rh2 = reset HEAD^^ --hard
 
+  # branch management
+  up = !git fetch origin && git rebase origin/master
+  ir = !git rebase -i origin/master
+
   # shortcuts for commands
   s = status
   d = !sh -c 'clear && git diff $1' -
   a = add
+  aa = !git add -u && git add . && git status    # add all and review
   co = checkout
   b = branch
   l = log
@@ -46,3 +48,13 @@
   p = push
   w = show
   y = cherry-pick
+
+  # tracking people
+  who = shortlog -n -s --no-merges
+
+  ## maintenance - I don't know what this does completely
+  # cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
+
+
+######## Favorite references
+#### http://robots.thoughtbot.com/post/4747482956/streamline-your-git-workflow-with-aliases
