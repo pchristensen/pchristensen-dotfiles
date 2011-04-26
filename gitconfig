@@ -1,7 +1,7 @@
 [user]
 	name = Peter Christensen
-	email = peter@geekstack.com
 [core]
+  excludesfile = ~/.gitignore
 	editor = emacsclient -nw --alternate-editor=''
 [color]
 	ui = auto
@@ -25,7 +25,7 @@
   ## soft resets
   r = reset
   ruc = reset --soft HEAD^
-  ruc1 = reset --soft HEAD^ 
+  ruc1 = reset --soft HEAD^
   r1 = reset HEAD^
   r2 = reset HEAD^^
   ## hard resets
@@ -35,7 +35,7 @@
 
   # shortcuts for commands
   s = status
-  d = !sh -c 'clear && git diff $1' - 
+  d = !sh -c 'clear && git diff $1' -
   a = add
   co = checkout
   b = branch
