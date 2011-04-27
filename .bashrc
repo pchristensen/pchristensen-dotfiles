@@ -132,11 +132,11 @@ if [[ -n "$PS1" ]] ; then
   alias la="ls -lA"
 
   ## ACK
-  alias ack='ack-grep'
+  alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
   alias rack='ack --ruby --follow'
   alias aack='ack --all'
     ## OSX
-    # alias ack='ack'
+    # alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
     # alias rack='ack --ruby --follow'
     # alias aack='ack --all'
 

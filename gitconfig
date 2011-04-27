@@ -7,10 +7,10 @@
 [color]
   ui = auto
 
-[alias]
-  # I like using the interactive mode to make complex commits
-  # ai = add --interactive
+[apply]
+  whitespace=fix
 
+[alias]
   # All the aliases relate to commits. Note that they are grouped by common prefixes, so I don't confuse what I want done by accident.
   c = commit
   cm = commit -m                               # commit with a message
@@ -35,14 +35,29 @@
   up = !git fetch origin && git rebase origin/master
   ir = !git rebase -i origin/master
 
-  # shortcuts for commands
+  # status
   s = status
+  ss = status -sb                                # short status
+
+  # diff
   d = !sh -c 'clear && git diff $1' -
+  ds = diff --cached
+  dw = diff --word-diff
+
+  # add
   a = add
   aa = !git add -u && git add . && git status    # add all and review
+  ai = add --interactive
+  ap = add -p
+  au = add -u                                    # add all changed (but not new) files to stage
+
+  # log
+  l = log
+  last = log @{1}..
+  lw = whatchanged
+
   co = checkout
   b = branch
-  l = log
   f = fetch
   r = reset
   p = push
