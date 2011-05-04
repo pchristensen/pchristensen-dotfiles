@@ -79,7 +79,7 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*f%t%?(%u)%
 ## vbell on
 
 ## ## scrollbars
-## termcapinfo xterm* ti@:te@
+termcapinfo xterm* ti@:te@
 ## ## From http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html
 ## ## Q: My xterm scrollbar does not work with screen.
 ## ## A: The problem is that xterm will not allow scrolling if the alternate text buffer is selected.

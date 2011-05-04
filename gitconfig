@@ -43,6 +43,7 @@
   d = !sh -c 'clear && git diff $1' -
   ds = diff --cached
   dw = diff --word-diff
+  dsw = diff --cached --word-diff
 
   # add
   a = add
