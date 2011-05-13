@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-# from http://errtheblog.com/posts/89-huba-huba
+# from https://github.com/rmm5t/dotfiles/blob/master/install.rb
+# -> from http://errtheblog.com/posts/89-huba-huba
 
 home = File.expand_path('~')
 

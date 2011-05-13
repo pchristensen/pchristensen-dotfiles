@@ -40,7 +40,10 @@
 
 ##################### SETTINGS ########################
 ## Default Screens
-screen -t shell 0
+screen -t emacs 0
+screen -t console 1
+screen -t server 2
+screen -t bash 3
 
 ## turn off startup message
 startup_message off
