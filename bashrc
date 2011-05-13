@@ -86,11 +86,6 @@ if [[ -n "$PS1" ]] ; then
       #alias egrep='egrep --color=auto'
   fi
 
-  # some more ls aliases
-  #alias ll='ls -l'
-  #alias la='ls -A'
-  #alias l='ls -CF'
-
   # enable programmable completion features (you don't need to enable
   # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
   # sources /etc/bash.bashrc).
@@ -98,16 +93,14 @@ if [[ -n "$PS1" ]] ; then
       . /etc/bash_completion
   fi
 
-
-  alias e="emacsclient -nw --alternate-editor=''"
-  alias ed="emacs-23.3 --daemon"
-  alias killemacs="emacsclient --eval '(progn (save-some-buffers t t) (kill-emacs))'"
   #emacs aliases when using emacs --daemon.
   #-c -n = new window, terminal doesn't wait
   #-t = force terminal mode
-  #-a <editor> = start alternate editor if emacs-daemon isn't running
-  alias emacsw="emacsclient -c -n -a emacs"
-  alias emacst="emacsclient -t -a emacs"
+  #-alternate-editor='' = start daemon if it isn't already running
+  alias e="emacsclient -nw --alternate-editor=''"
+  alias ed="emacs-23.3 --daemon"
+  alias killemacs="emacsclient -e '(kill-emacs)'"
+  alias killemacssoft="emacsclient --eval '(progn (save-some-buffers t t) (kill-emacs))'"
 
   EDITOR="e"
   VISUAL="e"
@@ -133,14 +126,10 @@ if [[ -n "$PS1" ]] ; then
   alias ll="ls -l"
   alias la="ls -lA"
 
-  ## ACK
-  # alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
-  # alias rack='ack-grep --ruby --follow'
-  # alias aack='ack-grep --all'
-    ## OSX
-    alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
-    alias rack='ack --ruby --follow'
-    alias aack='ack --all'
+  alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
+  #alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
+  alias rack='ack --ruby --follow'
+  alias aack='ack --all'
 
   alias psgrep='ps aux | grep'
 
