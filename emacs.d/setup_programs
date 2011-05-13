@@ -1,0 +1,37 @@
+;;;;SETUP
+;;----nXHTML-------------
+; M-x nxhtmlmaint-start-byte-compilation
+
+;;----EMACS-W3M-----------
+;---------------
+;;;;; http://bc.tech.coop/blog/080110.html
+; sudo apt-get install pkg-config gettext gawk nkf autoconf
+; wget http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/gc-7.1.tar.gz
+;   -OR-
+; cp emacs/bin/gc-7.1.tar.gz ~/
+; tar -xvf gc-7.1.tar.gz
+; cd gc-7.1
+; ./configure
+; make
+; make check
+; sudo make install
+; cd ~/
+; rm -rf gc-7.1*
+;
+; wget http://downloads.sourceforge.net/project/w3m/w3m/w3m-0.5.2/w3m-0.5.2.tar.gz
+;   -OR-
+; cp emacs/bin/w3m-0.5.2.tar.gz
+; tar -xvf w3m-0.5.2.tar.gz
+; cd w3m-0.5.2
+; ./configure
+; make
+; sudo make install
+; cd ~/
+; rm -rf w3m-0.5.2
+;
+; cd ~/emacs/site-lisp/emacs-w3m/
+; autoconf
+; ./configure
+; make
+; sudo make install
+
