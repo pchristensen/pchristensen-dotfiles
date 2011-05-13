@@ -144,7 +144,7 @@ if [[ -n "$PS1" ]] ; then
   # Autocomplete for 'g' as well
   complete -o default -o nospace -F _git g
 
-  . ~/dotfiles/z.sh
+  . ~/.bash/z.sh
 
   function prompt {
       local LIGHT_RED="\[\033[1;31m\]"
@@ -153,7 +153,7 @@ if [[ -n "$PS1" ]] ; then
 
       local TITLEBAR='\[\033]0;\u@\h\007\]'
 
-      source ~/dotfiles/git-completion.bash
+      source ~/.bash/git-completion.bash
 
       export GIT_PS1_SHOWDIRTYSTATE=true
       export GIT_PS1_SHOWUNTRACKEDFILES=true

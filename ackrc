@@ -3,3 +3,9 @@ haml=haml
 
 --type-set
 coffeescript=coffee
+
+
+# Local Variables:
+# mode: shell-script
+# End:
+

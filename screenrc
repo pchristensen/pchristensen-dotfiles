@@ -95,3 +95,8 @@ termcapinfo xterm* ti@:te@
 
 ## ## fix backspace
 ## termcapinfo xterm* 'bc@:bs@'
+
+# Local Variables:
+# mode: shell-script
+# End:
+
