@@ -1,3 +1,8 @@
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+
+(setq custom-file "~/.emacs.d/pchristensen/custom.el")
+(load custom-file)
+
 (require 'cl)
 
 ; from http://steve.yegge.googlepages.com/my-dot-emacs-file
