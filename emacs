@@ -90,3 +90,8 @@
 (load-library "geekstack") ;; Stuff specific to GeekStack work
 
 (load-library "custom") ;;layout customizations
+
+# Local Variables:
+# mode: emacs-lisp
+# End:
+
