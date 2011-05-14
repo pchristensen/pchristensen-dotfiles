@@ -3,6 +3,7 @@
 (setq custom-file "~/.emacs.d/pchristensen/custom.el")
 (load custom-file)
 
+(load "pchristensen/global")
 (load "pchristensen/defuns")
 
 (vendor 'haml-mode)
