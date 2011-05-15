@@ -3,24 +3,14 @@
 (setq custom-file "~/.emacs.d/pchristensen/custom.el")
 (load custom-file)
 
+(load "pchristensen/env")
 (load "pchristensen/global")
 (load "pchristensen/defuns")
+
 
 (vendor 'haml-mode)
 (vendor 'sass-mode)
 ;-----------------------------------
-
-;; (require 'cl)
-
-;; ; from http://steve.yegge.googlepages.com/my-dot-emacs-file
-;; (defvar emacs-root (cond ((or (eq system-type 'gnu/linux) (eq system-type 'cyqwin) (eq system-type 'linux)) "/home/peter/")
-;; 			 ((eq system-type 'darwin) "/Users/peterchristensen/")
-;; 			 (t "C:/Users/Peter/Documents/nix/")))
-
-;; ;;TODO Questionable definitions
-;; ;(defvar elisp-root "src/elisp/")
-;; ;(add-to-list 'load-path (concat emacs-root "src/lisp/"))
-;; ;(add-to-list 'load-path (concat emacs-root "src/elisp/"))
 
 ;; (labels ((add-path (p)
 ;; 		   (add-to-list 'load-path (concat emacs-root p))))
