@@ -28,6 +28,7 @@
 (vendor 'erlang)
 (vendor 'undo-tree)
 (vendor 'paredit)
+(vendor 'yaml-mode)
 ;-----------------------------------
 
 ;; (labels ((add-path (p)

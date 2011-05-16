@@ -13,3 +13,6 @@
 [submodule "emacs.d/vendor/paredit"]
 	path = emacs.d/vendor/paredit
 	url = https://github.com/emacsmirror/paredit.git
+[submodule "emacs.d/vendor/yaml-mode"]
+	path = emacs.d/vendor/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
