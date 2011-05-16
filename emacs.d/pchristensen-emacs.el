@@ -30,20 +30,7 @@
 (vendor 'paredit)
 (vendor 'yaml-mode)
 (vendor 'feature-mode)
-
-;-----------------------------------
-
-;; (labels ((add-path (p)
-;; 		   (add-to-list 'load-path (concat emacs-root p))))
-;;   (add-path "emacs/lisp") ;; all my personal elisp code
-;;   (add-path "emacs/site-lisp") ;; elisp stuff I find on the internet
-;;   (add-path "emacs/lisp/cnu") ;; Specific to CashNetUSA setup
-;; )
-
-;; (load-library "display-prefs")  ;; Make the windows look the way I want
-;; (load-library "behavior") ;; One-offs and configs to make emacs act the way I want
-;; (load-library "utils") ;; Helpful functions and snippets I've collected
-;; (load-library "modes") ;; Setup and customization for different modes
+(vendor 'yasnippet)
 
 ;; ;;--------PROJECT----------------------------------------------------------------------------
 ;; (load-library "groupon") ;; Stuff specific to Groupon

@@ -22,3 +22,9 @@
 [submodule "emacs.d/vendor/yasnippet"]
 	path = emacs.d/vendor/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "emacs.d/vendor/yasnippets-rails"]
+	path = emacs.d/vendor/yasnippets-rails
+	url = https://github.com/eschulte/yasnippets-rails.git
+[submodule "emacs.d/vendor/yasnippets-shoulda"]
+	path = emacs.d/vendor/yasnippets-shoulda
+	url = https://github.com/rwc9u/yasnippets-shoulda.git
