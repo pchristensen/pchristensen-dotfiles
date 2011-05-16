@@ -6,7 +6,6 @@
 (load "pchristensen/env")
 (load "pchristensen/global")
 (load "pchristensen/defuns")
-(load "pchristensen/bindings")
 (load "pchristensen/tabs")
 (load "pchristensen/disabled")
 (load "pchristensen/utf-8")
@@ -31,6 +30,9 @@
 (vendor 'yaml-mode)
 (vendor 'feature-mode)
 (vendor 'yasnippet)
+(vendor 'slime)
+
+(load "pchristensen/bindings")
 
 ;; ;;--------PROJECT----------------------------------------------------------------------------
 ;; (load-library "groupon") ;; Stuff specific to Groupon
