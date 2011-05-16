@@ -11,6 +11,7 @@
 (load "pchristensen/disabled")
 (load "pchristensen/utf-8")
 (load "pchristensen/grep")
+(load "pchristensen/diff")
 
 
 (vendor 'haml-mode)
