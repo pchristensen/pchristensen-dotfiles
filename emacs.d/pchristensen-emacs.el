@@ -12,6 +12,7 @@
 (load "pchristensen/utf-8")
 (load "pchristensen/grep")
 (load "pchristensen/diff")
+(load "pchristensen/ido")
 
 
 (vendor 'haml-mode)
