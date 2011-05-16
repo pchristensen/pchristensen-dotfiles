@@ -8,6 +8,8 @@
 (load "pchristensen/defuns")
 (load "pchristensen/bindings")
 (load "pchristensen/tabs")
+(load "pchristensen/disabled")
+
 
 (vendor 'haml-mode)
 (vendor 'sass-mode)
