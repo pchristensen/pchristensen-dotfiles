@@ -10,8 +10,8 @@
 ;; (color-theme-charcoal-black)
 ;; (color-theme-gray30)
 
-;uncomment if you want to see all themes.  find one you like, and change the color-theme- call above
-;(require 'theme-manager)
-;(define-key global-map [(C-f10)] 'theme-prev)
-;(define-key global-map [(C-f11)] 'theme-next)
+;; ;uncomment if you want to see all themes.  find one you like, and change the color-theme- call above
+;; (require 'theme-manager)
+;; (define-key global-map [f5] 'theme-prev)
+;; (define-key global-map [f6] 'theme-next)
 

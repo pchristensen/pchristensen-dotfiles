@@ -34,3 +34,6 @@
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
+[submodule "emacs.d/vendor/rainbow"]
+	path = emacs.d/vendor/rainbow
+	url = git://git.naquadah.org/rainbow.git
