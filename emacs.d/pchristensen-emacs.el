@@ -16,7 +16,7 @@
 (load "pchristensen/dired")
 (load "pchristensen/recentf")
 (load "pchristensen/zoom")
-
+(load "pchristensen/flymake")
 
 (vendor 'haml-mode)
 (vendor 'sass-mode)

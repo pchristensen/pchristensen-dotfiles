@@ -11,20 +11,21 @@
 (setq c-basic-offset 4)
 (setq css-indent-offset 2)
 (setq sh-basic-offset 2)
+(setq js-indent-level 2)
 (set-default 'javascript-indent-level 2)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hippie expand.  Groovy vans with tie-dyes.
-;; TODO Learn about and use hippie-expand
+;; TODO NEXT Learn about and use hippie-expand
 ;; This is rmm5ts version
-(setq hippie-expand-try-functions-list
-      '(yas/hippie-try-expand
-        try-expand-dabbrev
-        try-expand-dabbrev-all-buffers
-        try-expand-dabbrev-from-kill
-        try-complete-file-name
-        try-complete-lisp-symbol))
-;; This is what was set
+;; (setq hippie-expand-try-functions-list
+;;       '(yas/hippie-try-expand
+;;         try-expand-dabbrev
+;;         try-expand-dabbrev-all-buffers
+;;         try-expand-dabbrev-from-kill
+;;         try-complete-file-name
+;;         try-complete-lisp-symbol))
+;; ;; This is what was originally set
 (setq hippie-expand-try-functions-list
       '(try-complete-file-name-partially
         try-complete-file-name
