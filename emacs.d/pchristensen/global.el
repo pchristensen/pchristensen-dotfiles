@@ -54,8 +54,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(rainbow-mode)
-
 ;; ;; TODO Figure out what ispell is - it sounds cool
 ;; ;; 'brew install aspell --lang=en' (instead of ispell)
 ;; (setq-default ispell-program-name "aspell")

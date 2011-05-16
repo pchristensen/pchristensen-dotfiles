@@ -1,6 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 
-(setq custom-file "~/.emacs.d/pchristensen/custom.el")
+(setq custom-file (expand-file-name "~/.emacs.d/pchristensen/custom.el"))
 (load custom-file)
 
 (load "pchristensen/env")
@@ -33,11 +33,7 @@
 (vendor 'yasnippet)
 (vendor 'slime)
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
+;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html
 
 (load "pchristensen/bindings")
 
-;; ;;--------PROJECT----------------------------------------------------------------------------
-;; (load-library "groupon") ;; Stuff specific to Groupon
-;; (load-library "geekstack") ;; Stuff specific to GeekStack work
-
-;; (load-library "custom") ;;layout customizations
