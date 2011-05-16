@@ -4,6 +4,15 @@
 
 (defvar emacs-root (concat root "emacs"))
 
+;; ;; TODO I don't think I need to add-path anymore
+;; (labels ((add-path (p)
+;; 		   (add-to-list 'load-path (concat emacs-root p))))
+;;   (add-path "emacs/lisp") ;; all my personal elisp code
+;;   (add-path "emacs/site-lisp") ;; elisp stuff I find on the internet
+;;   (add-path "emacs/lisp/cnu") ;; Specific to CashNetUSA setup
+;; )
+
+
 ;;----------OSX SPECIFIC-------------------------------------------------------------------------------
 ;;;https://github.com/aim-stuff/cmd-key-happy/blob/master/INSTALL - this makes the command key => Meta
 

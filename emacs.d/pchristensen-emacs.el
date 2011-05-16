@@ -25,6 +25,7 @@
 (vendor 'color-theme)
 (vendor 'haml-mode)
 (vendor 'sass-mode)
+(vendor 'erlang)
 ;-----------------------------------
 
 ;; (labels ((add-path (p)
