@@ -13,6 +13,9 @@
 (load "pchristensen/grep")
 (load "pchristensen/diff")
 (load "pchristensen/ido")
+(load "pchristensen/dired")
+(load "pchristensen/recentf")
+(load "pchristensen/zoom")
 
 
 (vendor 'haml-mode)
