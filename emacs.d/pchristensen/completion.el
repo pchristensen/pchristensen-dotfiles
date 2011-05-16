@@ -11,10 +11,3 @@
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
 
-;;----------YASNIPPET----------------------------------------------------------------------------------
-(add-to-list 'load-path (concat emacs-root "emacs/site-lisp/yasnippet"))
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat emacs-root "emacs/site-lisp/yasnippet/snippets"))
-
-

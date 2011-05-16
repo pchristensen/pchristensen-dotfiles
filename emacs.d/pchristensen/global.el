@@ -51,16 +51,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;;----------UNDO TREE----------------------------------------------------------------------------------
-;http://briancarper.net/blog/568/emacs-undo-trees
-;http://www.emacswiki.org/emacs/UndoTree
-(require 'undo-tree)
-(global-undo-tree-mode)
-
-;;;--------------PAREDIT-----------------------------------------------------------------------------------
-;(add-to-list 'load-path (concat emacs-root elisp-root "paredit/"))
-(require 'paredit)
-
 
 ;; ;; TODO Figure out what ispell is - it sounds cool
 ;; ;; 'brew install aspell --lang=en' (instead of ispell)

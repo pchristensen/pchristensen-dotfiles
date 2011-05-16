@@ -3,4 +3,6 @@
       load-path))
 (setq erlang-root-dir "/usr/local/lib/erlang")
 (setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
-(autload 'erlang-start)
+;(autoload 'erlang-start)
+;; TODO Not sure what to do about erlang autoload, since systems might not have this installed
+;; installation here: http://www.erlang.org/download.html

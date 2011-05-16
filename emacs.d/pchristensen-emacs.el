@@ -26,6 +26,7 @@
 (vendor 'haml-mode)
 (vendor 'sass-mode)
 (vendor 'erlang)
+(vendor 'undo-tree)
 ;-----------------------------------
 
 ;; (labels ((add-path (p)

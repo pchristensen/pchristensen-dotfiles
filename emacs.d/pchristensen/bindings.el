@@ -2,6 +2,9 @@
 ;; ;; TODO Review remaining keybindings from rmm5t
 
 ;;----------WINDMOVE-----------------------------------------------------------------------------------
+;; ;; Window navigation
+(windmove-default-keybindings 'meta)
+
 (global-set-key "\M-8" 'windmove-up)
 (global-set-key "\M-2" 'windmove-down)
 (global-set-key "\M-4" 'windmove-left)
@@ -21,58 +24,59 @@
 (global-set-key "\C-c\C-k" 'kill-ring-save)
 (global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
 
-;Marco Barringer's recommendations
-;Marco's Highly Opinionated Guide to Editing Lisp Code
-;(define-key slime-mode-map (kbd "[") 'insert-parentheses)
-;(define-key slime-mode-map (kbd "]") 'move-past-close-and-reindent)
-;(define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
-;(define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
+;; ;; TODO Reenable slime keys after slime reconfigured
+;; ;Marco Barringer's recommendations
+;; ;Marco's Highly Opinionated Guide to Editing Lisp Code
+;; ;(define-key slime-mode-map (kbd "[") 'insert-parentheses)
+;; ;(define-key slime-mode-map (kbd "]") 'move-past-close-and-reindent)
+;; ;(define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
+;; ;(define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
 
-(define-key slime-mode-map (kbd "[") 'paredit-open-parenthesis)
-(define-key slime-mode-map (kbd "]") 'paredit-close-parenthesis)
-(define-key slime-mode-map (kbd "RET") 'paredit-newline)
-(define-key slime-mode-map (kbd "<return>") 'paredit-newline)
-(define-key slime-mode-map (kbd "C-j") 'newline)
-(define-key slime-mode-map (kbd "C-M-f") 'paredit-forward)
-(define-key slime-mode-map (kbd "C-M-b") 'paredit-backward)
-(define-key slime-mode-map (kbd "M-(") 'paredit-wrap-sexp)
-(define-key slime-mode-map (kbd "M-s") 'paredit-splice-sexp)
-(define-key slime-mode-map (kbd "ESC <up>") 'paredit-splice-sexp-killing-backward)
-(define-key slime-mode-map (kbd "ESC <down>") 'paredit-splice-sexp-killing-forward)
-(define-key slime-mode-map (kbd "M-r") 'paredit-raise-sexp)
-(define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
-(define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
-(define-key slime-mode-map (kbd "C-c 0") 'paredit-forward-slurp-sexp)
-(define-key slime-mode-map (kbd "C-c M-0") 'paredit-forward-barf-sexp)
-(define-key slime-mode-map (kbd "C-c 9") 'paredit-backward-slurp-sexp)
-(define-key slime-mode-map (kbd "C-c M-9") 'paredit-backward-barf-sexp)
+;; (define-key slime-mode-map (kbd "[") 'paredit-open-parenthesis)
+;; (define-key slime-mode-map (kbd "]") 'paredit-close-parenthesis)
+;; (define-key slime-mode-map (kbd "RET") 'paredit-newline)
+;; (define-key slime-mode-map (kbd "<return>") 'paredit-newline)
+;; (define-key slime-mode-map (kbd "C-j") 'newline)
+;; (define-key slime-mode-map (kbd "C-M-f") 'paredit-forward)
+;; (define-key slime-mode-map (kbd "C-M-b") 'paredit-backward)
+;; (define-key slime-mode-map (kbd "M-(") 'paredit-wrap-sexp)
+;; (define-key slime-mode-map (kbd "M-s") 'paredit-splice-sexp)
+;; (define-key slime-mode-map (kbd "ESC <up>") 'paredit-splice-sexp-killing-backward)
+;; (define-key slime-mode-map (kbd "ESC <down>") 'paredit-splice-sexp-killing-forward)
+;; (define-key slime-mode-map (kbd "M-r") 'paredit-raise-sexp)
+;; (define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
+;; (define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
+;; (define-key slime-mode-map (kbd "C-c 0") 'paredit-forward-slurp-sexp)
+;; (define-key slime-mode-map (kbd "C-c M-0") 'paredit-forward-barf-sexp)
+;; (define-key slime-mode-map (kbd "C-c 9") 'paredit-backward-slurp-sexp)
+;; (define-key slime-mode-map (kbd "C-c M-9") 'paredit-backward-barf-sexp)
 
-;(define-key slime-mode-map [(?\()] 'paredit-open-list)
-;(define-key slime-mode-map [(?\))] 'paredit-close-list)
-;(define-key slime-mode-map [(return)] 'paredit-newline)
+;; ;(define-key slime-mode-map [(?\()] 'paredit-open-list)
+;; ;(define-key slime-mode-map [(?\))] 'paredit-close-list)
+;; ;(define-key slime-mode-map [(return)] 'paredit-newline)
 
-;(define-key slime-mode-map [(control ?\[)] (lambda () (interactive) (insert "(")))
-;(define-key slime-mode-map [(control ?\])] (lambda () (interactive) (insert ")")))
+;; ;(define-key slime-mode-map [(control ?\[)] (lambda () (interactive) (insert "(")))
+;; ;(define-key slime-mode-map [(control ?\])] (lambda () (interactive) (insert ")")))
 
-;(define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
-;(define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
-(define-key slime-mode-map (kbd "C-b") 'backward-sexp)
-(define-key slime-mode-map (kbd "C-M-b") 'backward-char)
-(define-key slime-mode-map (kbd "C-f") 'forward-sexp)
-(define-key slime-mode-map (kbd "C-M-f") 'forward-char)
+;; ;(define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
+;; ;(define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
+;; (define-key slime-mode-map (kbd "C-b") 'backward-sexp)
+;; (define-key slime-mode-map (kbd "C-M-b") 'backward-char)
+;; (define-key slime-mode-map (kbd "C-f") 'forward-sexp)
+;; (define-key slime-mode-map (kbd "C-M-f") 'forward-char)
 
-(define-key slime-mode-map (kbd "C-c d") 'backward-kill-sexp)
-(define-key slime-mode-map (kbd "C-c k") 'kill-sexp)
+;; (define-key slime-mode-map (kbd "C-c d") 'backward-kill-sexp)
+;; (define-key slime-mode-map (kbd "C-c k") 'kill-sexp)
 
-;---SLIME settings-----------
-(global-set-key "\C-cs" 'slime-selector)
-;http://parijatmishra.wordpress.com/2008/08/14/up-and-running-with-emacs-sbcl-and-slime/
-(define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-(define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-(define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-(define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-(define-key slime-mode-map (kbd "C-c ]") 'slime-close-all-parens-in-sexp)
-(define-key slime-mode-map (kbd "RET") 'newline-and-indent)
+;; ;---SLIME settings-----------
+;; (global-set-key "\C-cs" 'slime-selector)
+;; ;http://parijatmishra.wordpress.com/2008/08/14/up-and-running-with-emacs-sbcl-and-slime/
+;; (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+;; (define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+;; (define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+;; (define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+;; (define-key slime-mode-map (kbd "C-c ]") 'slime-close-all-parens-in-sexp)
+;; (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
 
 ;Bill Clementson: SLIME Tips and Techniques - Part 6 (Send SEXPs to REPL)
 ;(require 'pc-select)
@@ -143,9 +147,6 @@
 
 ;; ;; Repeat
 ;; (global-set-key [(control z)] 'repeat) ; was suspend-frame
-
-;; ;; Window navigation
-;; (windmove-default-keybindings 'meta)
 
 ;; ;; Mac OS X conventions
 ;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; was backward-sentence.
