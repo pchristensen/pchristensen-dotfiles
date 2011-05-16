@@ -9,6 +9,8 @@
 (load "pchristensen/bindings")
 (load "pchristensen/tabs")
 (load "pchristensen/disabled")
+(load "pchristensen/utf-8")
+(load "pchristensen/grep")
 
 
 (vendor 'haml-mode)
