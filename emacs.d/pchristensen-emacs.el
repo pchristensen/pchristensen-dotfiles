@@ -27,6 +27,7 @@
 (vendor 'sass-mode)
 (vendor 'erlang)
 (vendor 'undo-tree)
+(vendor 'paredit)
 ;-----------------------------------
 
 ;; (labels ((add-path (p)

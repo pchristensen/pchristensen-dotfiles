@@ -10,3 +10,6 @@
 [submodule "emacs.d/vendor/undo-tree"]
 	path = emacs.d/vendor/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
+[submodule "emacs.d/vendor/paredit"]
+	path = emacs.d/vendor/paredit
+	url = https://github.com/emacsmirror/paredit.git
