@@ -16,6 +16,7 @@
 (load "pchristensen/recentf")
 (load "pchristensen/zoom")
 (load "pchristensen/flymake")
+(load "pchristensen/hl-line")
 (load "pchristensen/info")
 (load "pchristensen/completion")
 ;; (load "pchristensen/w3m") ;; Not sure if this is worth it, want to try conkeror instead
