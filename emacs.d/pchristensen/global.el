@@ -43,6 +43,21 @@
 ;; zap-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)
 
+(iswitchb-mode 1)
+(defalias 'list-buffers 'ibuffer)
+
+;;----------UNIQUIFY-----------------------------------------------------------------------------------
+;; make duplicate buffer names clearer
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+;;----------UNDO TREE----------------------------------------------------------------------------------
+;http://briancarper.net/blog/568/emacs-undo-trees
+;http://www.emacswiki.org/emacs/UndoTree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+
 ;; ;; TODO Figure out what ispell is - it sounds cool
 ;; ;; 'brew install aspell --lang=en' (instead of ispell)
 ;; (setq-default ispell-program-name "aspell")

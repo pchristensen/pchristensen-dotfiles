@@ -1,6 +1,12 @@
-(defvar emacs-root (cond ((or (eq system-type 'gnu/linux) (eq system-type 'cyqwin) (eq system-type 'linux)) "/home/peter/")
+(defvar root (cond ((or (eq system-type 'gnu/linux) (eq system-type 'cyqwin) (eq system-type 'linux)) "/home/peter/")
 			 ((eq system-type 'darwin) "/Users/peterchristensen/")
 			 (t "C:/Users/Peter/Documents/nix/")))
+
+(defvar emacs-root (concat root "emacs"))
+
+;;----------OSX SPECIFIC-------------------------------------------------------------------------------
+;;;https://github.com/aim-stuff/cmd-key-happy/blob/master/INSTALL - this makes the command key => Meta
+
 
 ;;https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/env.el
 ;;; Environment variables

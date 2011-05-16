@@ -1,6 +1,28 @@
 ;; ;; TODO Collect my keybindings scattered around my files
 ;; ;; TODO Review remaining keybindings from rmm5t
 
+;;----------WINDMOVE-----------------------------------------------------------------------------------
+(global-set-key "\M-8" 'windmove-up)
+(global-set-key "\M-2" 'windmove-down)
+(global-set-key "\M-4" 'windmove-left)
+(global-set-key "\M-6" 'windmove-right)
+
+;;---------KEY MAPPING----------------------------------------------------------------------------------
+(global-set-key "\C-c^" 'enlarge-window)
+(global-set-key [f9] '(lambda () (interactive) (enlarge-window 5)))
+(global-set-key [f8] '(lambda () (interactive) (shrink-window 5)))
+; from http://steve.yegge.googlepages.com/effective-emacs
+(global-set-key "\C-x\C-m" 'execute-extended-command) ;was compose-mail
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+(global-set-key "\M-s" 'isearch-forward-regexp)
+(global-set-key "\M-r" 'isearch-backward-regexp)
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-ring-save)
+(global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
+
+
+
 ;;; Global key bindigns
 
 ;; How to Define Keyboard Shortcuts in Emacs
@@ -81,3 +103,4 @@
 ;; (global-set-key (kbd "M-Z") 'zap-up-to-char)
 ;; (global-set-key (kbd "M-F") 'forward-to-word)
 ;; (global-set-key (kbd "M-B") 'backward-to-word)
+
