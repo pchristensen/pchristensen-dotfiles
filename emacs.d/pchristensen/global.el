@@ -57,6 +57,10 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+;;;--------------PAREDIT-----------------------------------------------------------------------------------
+;(add-to-list 'load-path (concat emacs-root elisp-root "paredit/"))
+(require 'paredit)
+
 
 ;; ;; TODO Figure out what ispell is - it sounds cool
 ;; ;; 'brew install aspell --lang=en' (instead of ispell)
