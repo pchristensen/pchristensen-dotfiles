@@ -19,3 +19,6 @@
 [submodule "emacs.d/vendor/feature-mode"]
 	path = emacs.d/vendor/feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
+[submodule "emacs.d/vendor/yasnippet"]
+	path = emacs.d/vendor/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git

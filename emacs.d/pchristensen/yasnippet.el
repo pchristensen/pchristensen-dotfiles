@@ -1,3 +1,8 @@
+;;----------YASNIPPET----------------------------------------------------------------------------------
+;; http://code.google.com/p/yasnippet/
+;; https://github.com/emacsmirror/yasnippet
+(yas/initialize)
+
 ;;; Snippets make typing fun
 
 (require 'dropdown-list)
@@ -16,4 +21,5 @@
 (add-hook 'yas/minor-mode-hook
           (lambda () (define-key yas/minor-mode-map
                        (kbd "TAB") 'smart-tab))) ; was yas/expand
+
 
