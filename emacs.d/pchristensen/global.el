@@ -1,3 +1,6 @@
+;; ;; TODO Reconcile my cmd-key-happy.lua with https://github.com/rmm5t/dotfiles/blob/master/cmd-key-happy.lua
+;; ;;   and mv cmd-key-happy-lua to dotfiles
+
 ;;;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/global.el
 ;;
 ;; ;; Use commeand as the meta key
