@@ -6,7 +6,8 @@
 (load "pchristensen/env")
 (load "pchristensen/global")
 (load "pchristensen/defuns")
-
+(load "pchristensen/bindings")
+(load "pchristensen/tabs")
 
 (vendor 'haml-mode)
 (vendor 'sass-mode)
