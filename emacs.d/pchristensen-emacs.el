@@ -29,6 +29,8 @@
 (vendor 'undo-tree)
 (vendor 'paredit)
 (vendor 'yaml-mode)
+(vendor 'feature-mode)
+
 ;-----------------------------------
 
 ;; (labels ((add-path (p)
