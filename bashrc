@@ -125,6 +125,7 @@ if [[ -n "$PS1" ]] ; then
 
   alias ll="ls -lF"
   alias la="ls -lAF"
+  alias lo="ls -ltcF"
 
   alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
   #alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
