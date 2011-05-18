@@ -5,10 +5,6 @@
 (defvar emacs-root (concat root ".emacs.d/"))
 
 
-;;----------OSX SPECIFIC-------------------------------------------------------------------------------
-;;;https://github.com/aim-stuff/cmd-key-happy/blob/master/INSTALL - this makes the command key => Meta
-
-
 ;;https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/env.el
 ;;; Environment variables
 ;; (setq exec-path (cons "/usr/local/bin" exec-path))

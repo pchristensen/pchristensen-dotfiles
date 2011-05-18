@@ -43,3 +43,9 @@
 [submodule "emacs.d/vendor/js2-mode"]
 	path = emacs.d/vendor/js2-mode
 	url = https://github.com/mooz/js2-mode.git
+[submodule "bin/cmd-key-happy"]
+	path = bin/cmd-key-happy
+	url = https://github.com/aim-stuff/cmd-key-happy.git
+[submodule "emacs.d/vendor/color-theme-ir-black"]
+	path = emacs.d/vendor/color-theme-ir-black
+	url = https://github.com/rmm5t/color-theme-ir-black.git

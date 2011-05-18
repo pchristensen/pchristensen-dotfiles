@@ -3,6 +3,10 @@
 (if (fboundp 'color-theme-initialize) (color-theme-initialize))
 (setq color-theme-is-global t)
 (color-theme-dark-laptop)
+
+;; (vendor 'color-theme-ir-black)
+;; (color-theme-ir-black)
+
 ;; ;; Some themese I don't hate
 ;; (color-theme-arjen)
 ;; (color-theme-simple-1)
@@ -15,3 +19,5 @@
 ;; (define-key global-map [f5] 'theme-prev)
 ;; (define-key global-map [f6] 'theme-next)
 
+(set-face-foreground 'region "white")
+(set-face-background 'region "slategray")
