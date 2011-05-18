@@ -36,6 +36,7 @@
 (vendor 'theme-manager)
 (vendor 'autopair)
 (vendor 'auto-complete)
+(vendor 'csv-mode      'csv-mode)
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html
 
 (load "pchristensen/bindings")
