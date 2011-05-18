@@ -1,6 +1,6 @@
 ;;;--------Slime-------------------------------------------------------------------------------------------------
 ;SLIME Setup
-(defvar slime-root (concat emacs-root "emacs.d/vendor/slime/slime/"))
+(defvar slime-root (concat emacs-root "vendor/slime/slime/"))
 (setq inferior-lisp-program "sbcl"
       common-lisp-hyperspec-root (concat "file:" root ".docs/HyperSpec/")
       lisp-indent-function 'common-lisp-indent-function

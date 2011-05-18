@@ -2,15 +2,7 @@
 			 ((eq system-type 'darwin) "/Users/peterchristensen/")
 			 (t "C:/Users/Peter/Documents/nix/")))
 
-(defvar emacs-root (concat root "emacs"))
-
-;; ;; TODO I don't think I need to add-path anymore
-;; (labels ((add-path (p)
-;; 		   (add-to-list 'load-path (concat emacs-root p))))
-;;   (add-path "emacs/lisp") ;; all my personal elisp code
-;;   (add-path "emacs/site-lisp") ;; elisp stuff I find on the internet
-;;   (add-path "emacs/lisp/cnu") ;; Specific to CashNetUSA setup
-;; )
+(defvar emacs-root (concat root ".emacs.d/"))
 
 
 ;;----------OSX SPECIFIC-------------------------------------------------------------------------------

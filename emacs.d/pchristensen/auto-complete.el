@@ -1,7 +1,7 @@
 ;;----------AUTOCOMPLETE-------------------------------------------------------------------------------
 ;; http://cx4a.org/software/auto-complete/
-(add-to-list 'load-path "~/emacs/site-lisp/")
+;; https://github.com/m2ym/auto-complete
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs/site-lisp/ac-dict")
+(add-to-list 'ac-dictionary-directories (concat emacs-root "vendor/auto-complete/ac-dict"))
 (ac-config-default)
 
