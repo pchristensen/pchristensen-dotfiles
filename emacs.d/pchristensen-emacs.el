@@ -35,6 +35,7 @@
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
 (vendor 'idomenu)
 (vendor 'theme-manager)
+(vendor 'autopair)
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html
 
 (load "pchristensen/bindings")

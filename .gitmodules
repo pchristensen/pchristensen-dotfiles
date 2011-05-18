@@ -34,3 +34,6 @@
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
+[submodule "emacs.d/vendor/autopair"]
+	path = emacs.d/vendor/autopair
+	url = https://github.com/emacsmirror/autopair.git
