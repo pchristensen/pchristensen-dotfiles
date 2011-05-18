@@ -34,6 +34,7 @@
 
 ;; Make sure all backup files only live in one place
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+(setq auto-save-default nil)
 
 ;; Trash Can Support
 (setq delete-by-moving-to-trash t)
