@@ -1,3 +1,6 @@
+;;---------RINARI (RAILS)----------------------------------------------------------------------------------------
+;;http://github.com/eschulte/rinari
+
 (define-key rinari-minor-mode-map (kbd "C-c t") 'rinari-find-test)
 (define-key rinari-minor-mode-map (kbd "C-c m") 'rinari-find-model)
 (define-key rinari-minor-mode-map (kbd "C-c c") 'rinari-find-controller)

@@ -49,3 +49,6 @@
 [submodule "emacs.d/vendor/color-theme-ir-black"]
 	path = emacs.d/vendor/color-theme-ir-black
 	url = https://github.com/rmm5t/color-theme-ir-black.git
+[submodule "emacs.d/vendor/rinari"]
+	path = emacs.d/vendor/rinari
+	url = https://github.com/eschulte/rinari.git
