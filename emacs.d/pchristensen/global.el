@@ -58,3 +58,6 @@
 ;; (setq-default ispell-program-name "aspell")
 ;; (setq ispell-list-command "list")
 ;; (setq ispell-extra-args '("--sug-mode=ultra"))
+
+;; ;; TODO This seems dangerous to do silently, but I like the idea
+;; (global-auto-revert-mode 1)

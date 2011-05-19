@@ -16,7 +16,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hippie expand.  Groovy vans with tie-dyes.
-;; TODO NEXT Learn about and use hippie-expand
 ;; This is rmm5ts version
 ;; (setq hippie-expand-try-functions-list
 ;;       '(yas/hippie-try-expand
@@ -26,17 +25,25 @@
 ;;         try-complete-file-name
 ;;         try-complete-lisp-symbol))
 ;; ;; This is what was originally set
+;; (setq hippie-expand-try-functions-list
+;;       '(try-complete-file-name-partially
+;;         try-complete-file-name
+;;         try-expand-all-abbrevs
+;;         try-expand-list
+;;         try-expand-line
+;;         try-expand-dabbrev
+;;         try-expand-dabbrev-all-buffers
+;;         try-expand-dabbrev-from-kill
+;;         try-complete-lisp-symbol-partially
+;;         try-complete-lisp-symbol))
+;; ;; TODO LATER When I start using yasnippet, bump it higher up in the list
 (setq hippie-expand-try-functions-list
-      '(try-complete-file-name-partially
-        try-complete-file-name
-        try-expand-all-abbrevs
-        try-expand-list
-        try-expand-line
-        try-expand-dabbrev
+      '(try-expand-dabbrev
         try-expand-dabbrev-all-buffers
         try-expand-dabbrev-from-kill
-        try-complete-lisp-symbol-partially
-        try-complete-lisp-symbol))
+        try-complete-file-name-partially
+        try-complete-lisp-symbol
+        yas/hippie-try-expand))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Smart Tab
