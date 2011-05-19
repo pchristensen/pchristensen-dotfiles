@@ -24,8 +24,6 @@
 (global-set-key "\C-c\C-k" 'kill-ring-save)
 (global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
 
-;; TODO Reenable slime keys after slime reconfigured
-;; TODO Bindings is probably placed in the wrong order
 ;Marco Barringer's recommendations
 ;Marco's Highly Opinionated Guide to Editing Lisp Code
 ;(define-key slime-mode-map (kbd "[") 'insert-parentheses)
@@ -85,12 +83,6 @@
 (define-key lisp-mode-map [f8] '(lambda ()
 				 (interactive)
 				 (slime-send-dwim 1)))
-
-;; TODO Figure keybindings for dabbrev
-;; keybinding for dabbrev-expand (M-/)
-;; keybinding for dabbrev-completion
-;; keybinding for dabbrev-abbrev-char-regexp
-
 
 ;;; Global key bindigns
 

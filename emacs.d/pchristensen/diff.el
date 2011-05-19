@@ -1,4 +1,3 @@
-;; ;; TODO Make sure I like the diff colors
 ;;; https://github.com/rmm5t/dotfiles/blob/master/emacs.d/rmm5t/diff.el
 ;;; Diff
 

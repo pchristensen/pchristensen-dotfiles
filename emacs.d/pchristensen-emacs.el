@@ -42,7 +42,7 @@
 (vendor 'auto-complete)
 (vendor 'csv-mode      'csv-mode)
 
-;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html
+;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html (need to figure out 256 color solution first)
 
 (load "pchristensen/bindings")
 

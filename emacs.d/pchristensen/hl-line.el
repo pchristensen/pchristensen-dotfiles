@@ -1,5 +1,5 @@
 ;;; Highlight current line
-;; ;; TODO Find a nice color that works with 16 color (terminal.app) or 256 color (iterm.app) color sets
+
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#181800")
 
