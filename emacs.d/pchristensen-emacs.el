@@ -22,6 +22,10 @@
 ;; (load "pchristensen/geekstack")
 
 (vendor 'color-theme)
+(vendor 'ruby-mode)
+(vendor 'rinari)
+(vendor 'inf-ruby      'inf-ruby)
+(vendor 'yari)
 (vendor 'haml-mode)
 (vendor 'sass-mode)
 (vendor 'erlang)
@@ -37,6 +41,7 @@
 (vendor 'autopair)
 (vendor 'auto-complete)
 (vendor 'csv-mode      'csv-mode)
+
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html
 
 (load "pchristensen/bindings")

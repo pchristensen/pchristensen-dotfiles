@@ -1,4 +1,11 @@
 ;;;--------RUBY--------------------------------------------------------------------------------------------------
+;; rmm5t's warning about using deprecated ruby-mode (https://github.com/rmm5t/dotfiles/commit/53e4c06ab246093943a24f88b88e99b11d1575cc)
+;; Switched to the old, deprecated, Ruby-team ruby-mode for stability
+
+;; In the Emacs-maintained ruby-mode version:
+;; * The ruby-mode maintained by emacs has poor string syntax highlighting and performance problems.
+;; * "A string ending in a question mark?" causes trouble and long strings passed as arguments peg the CPU
+
 ;(require 'inf-ruby)
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
@@ -40,5 +47,14 @@
 (add-to-list 'auto-mode-alist '("rake$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("god$" . ruby-mode))
 
+
+;; ;; Ruby notes from CashNetUSA - kind of cool to use shell over ssh.  There's a lot to understand here.
+;; ;; M-x run-ruby uses ruby-program-name -- obviously you want to change 'parasite' to your own vmware image name
+;; (setf cnu-ruby-program-name "ssh moore bash -c 'cd /export/web/cnuapp 1>/dev/null 2>&1 && script/console --inf-ruby-mode'")
+
+;; (defun cnu-run-ruby ()
+;;   "use the cnu-specific setting to run ruby"
+;;   (interactive)
+;;   (run-ruby ruby-program-name))
 
 

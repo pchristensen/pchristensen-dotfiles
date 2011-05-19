@@ -52,3 +52,9 @@
 [submodule "emacs.d/vendor/rinari"]
 	path = emacs.d/vendor/rinari
 	url = https://github.com/eschulte/rinari.git
+[submodule "emacs.d/vendor/yari"]
+	path = emacs.d/vendor/yari
+	url = https://github.com/pedz/yari-with-buttons.git
+[submodule "emacs.d/vendor/inf-ruby"]
+	path = emacs.d/vendor/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby.git
