@@ -26,9 +26,13 @@
 ;; FIXME: it should be available in next versions of ruby-mode.el
 (defun ruby-insert-end ()
   (interactive)
-  (insert "end")
+  (insert "\n\nend")
   (ruby-indent-line t)
-  (end-of-line))
+  (previous-line)
+  (ruby-indent-line t))
+
+(define-key ruby-mode-map (kbd "C-c >") 'insert-arrow)
+(define-key ruby-mode-map (kbd "M-RET") 'ruby-insert-end)
 
 ;; Local key bindings
 (add-hook 'ruby-mode-hook
