@@ -33,6 +33,7 @@
 (vendor 'paredit)
 (vendor 'yaml-mode)
 (vendor 'feature-mode)
+(vendor 'rspec-mode)
 (vendor 'yasnippet)
 (vendor 'slime)
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
