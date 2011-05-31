@@ -25,6 +25,9 @@
 (global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
 (global-set-key "\M-k" 'copy-line)
 (global-set-key "\M-'" 'match-paren)  ;; was abbrev-prefix-mark
+(global-set-key (kbd "M-~") 'push-mark-no-activate)
+(global-set-key (kbd "M-`") 'jump-to-mark)
+
 
 ;Marco Barringer's recommendations
 ;Marco's Highly Opinionated Guide to Editing Lisp Code
