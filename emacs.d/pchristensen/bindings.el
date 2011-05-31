@@ -23,6 +23,8 @@
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-ring-save)
 (global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
+(global-set-key "\M-k" 'copy-line)
+(global-set-key "\M-'" 'match-paren)  ;; was abbrev-prefix-mark
 
 ;Marco Barringer's recommendations
 ;Marco's Highly Opinionated Guide to Editing Lisp Code

@@ -232,4 +232,4 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
   (toggle-read-only 0))
 
 (setq-default kill-read-only-ok t)
-(global-set-key "\M-k" 'copy-line)
+
