@@ -15,7 +15,7 @@
 (global-set-key [f9] '(lambda () (interactive) (enlarge-window 5)))
 (global-set-key [f8] '(lambda () (interactive) (shrink-window 5)))
 ; from http://steve.yegge.googlepages.com/effective-emacs
-(global-set-key "\C-x\C-m" 'execute-extended-command) ;was compose-mail
+; (global-set-key "\C-x\C-m" 'execute-extended-command) ;was compose-mail ; need it to be smex - set in smex.el
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
