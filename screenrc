@@ -18,6 +18,8 @@
 
 #### C-z S         split terminal horizontally into regions       C-z c to create new window there
 #### C-z |         split terminal vertically into regions         Requires debian/ubuntu patched screen 4.0
+#### C-z X         remove current region
+#### C-z Q         remove all regions but the current one
 #### C-z :resize   resize region
 #### C-z :fit      fit screen size to new terminal size           C-z F is the same. Do after resizing xterm
 #### C-z :remove   remove region                                  C-z X is the same
