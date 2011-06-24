@@ -1,7 +1,7 @@
 ;;; Highlight current line
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#181800")
+;; (set-face-background 'hl-line "#181800")
 
 ;; ;; Great for black background - unless you're on 16 color terminal
 ;; (set-face-background 'hl-line "gray8")
@@ -14,5 +14,5 @@
 ;; (set-face-background 'hl-line "#111")
 
 ;; Other foreground colors
-;; (set-face-foreground 'hl-line "white")
+(set-face-foreground 'hl-line "white")
 ;; (set-face-foreground 'hl-line nil)
