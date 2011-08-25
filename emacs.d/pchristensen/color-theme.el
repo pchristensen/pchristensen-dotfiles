@@ -4,6 +4,8 @@
 (setq color-theme-is-global t)
 (color-theme-dark-laptop) ;; For osx terminal
 ;; (color-theme-euphoria) ;; For puttyterminal
+;(color-theme-dark-laptop)
+;(color-theme-tty-dark)
 
 ;; (vendor 'color-theme-ir-black)
 ;; (color-theme-ir-black)
