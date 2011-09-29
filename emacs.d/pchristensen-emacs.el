@@ -4,6 +4,7 @@
 (load custom-file)
 
 (load "pchristensen/env")
+(load "pchristensen/hooks")
 (load "pchristensen/global")
 (load "pchristensen/defuns")
 (load "pchristensen/tabs")
