@@ -48,6 +48,8 @@
 (iswitchb-mode 1)
 (defalias 'list-buffers 'ibuffer)
 
+(setq kill-whole-line t)
+
 ;;----------UNIQUIFY-----------------------------------------------------------------------------------
 ;; make duplicate buffer names clearer
 (require 'uniquify)
