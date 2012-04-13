@@ -113,6 +113,7 @@ if [[ -n "$PS1" ]] ; then
     ## GROUPON
     export PATH=$PATH:/Users/peterchristensen/bin/cassandra/bin
     export PATH=$PATH:/Users/peterchristensen/bin
+    export DEPLOYER=peterc
   ## Export paths
   export PATH=/home/peter/bin:$PATH
   export PATH=/usr/local/mysql/bin:$PATH

@@ -1,6 +1,6 @@
 ;;; Highlight current line
 
-(global-hl-line-mode 1)
+(global-hl-line-mode 0)
 ;; (set-face-background 'hl-line "#181800")
 
 ;; ;; Great for black background - unless you're on 16 color terminal

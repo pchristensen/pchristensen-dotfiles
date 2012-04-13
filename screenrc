@@ -54,7 +54,7 @@ startup_message off
 escape ^Zz
 
 ## longer scrollback
-defscrollback 30000
+defscrollback 90000
 
 ## clear screen when exiting a full screen program
 altscreen on
