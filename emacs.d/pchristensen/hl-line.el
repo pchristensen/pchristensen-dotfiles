@@ -1,5 +1,4 @@
 ;;; Highlight current line
-
 (global-hl-line-mode 0)
 ;; (set-face-background 'hl-line "#181800")
 

@@ -128,7 +128,9 @@ if [[ -n "$PS1" ]] ; then
   alias la="ls -lAF"
   alias lo="ls -ltcF"
 
+  ## OSX
   alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
+  ## Ubuntu
   #alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
   alias rack='ack --ruby --follow'
   alias aack='ack --all'
@@ -177,3 +179,5 @@ fi # <- close the non-interactive guard
 # mode: shell-script
 # End:
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

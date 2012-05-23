@@ -16,6 +16,10 @@
 ;; (color-theme-calm-forest)
 ;; (color-theme-charcoal-black)
 ;; (color-theme-gray30)
+;; (color-theme-midnight)
+;; (color-theme-taming-mr-arneson)
+;; (color-theme-tty-dark)
+;; (color-theme-bharadwaj)
 
 ;; ;uncomment if you want to see all themes.  find one you like, and change the color-theme- call above
 ;; (require 'theme-manager)
