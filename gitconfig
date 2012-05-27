@@ -36,6 +36,7 @@
 
   # branch management
   up = !git fetch origin && git rebase origin/master
+  upp =  !sh -c 'git fetch $1 && git rebase $1/master' -
   ir = !git rebase -i origin/master
 
   # status
