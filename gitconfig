@@ -72,6 +72,9 @@
   # tracking people
   who = shortlog -n -s --no-merges
 
+  # heroku
+  herokup = push -f heroku HEAD:master
+
   ## maintenance - I don't know what this does completely
   # cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
 
