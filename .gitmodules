@@ -7,18 +7,12 @@
 [submodule "emacs.d/vendor/undo-tree"]
 	path = emacs.d/vendor/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
-[submodule "emacs.d/vendor/paredit"]
-	path = emacs.d/vendor/paredit
-	url = https://github.com/emacsmirror/paredit.git
 [submodule "emacs.d/vendor/yaml-mode"]
 	path = emacs.d/vendor/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
 [submodule "emacs.d/vendor/feature-mode"]
 	path = emacs.d/vendor/feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
-[submodule "emacs.d/vendor/yasnippet"]
-	path = emacs.d/vendor/yasnippet
-	url = https://github.com/emacsmirror/yasnippet.git
 [submodule "emacs.d/vendor/yasnippets-rails"]
 	path = emacs.d/vendor/yasnippets-rails
 	url = https://github.com/eschulte/yasnippets-rails.git
