@@ -75,10 +75,10 @@
 ;---SLIME settings-----------
 (global-set-key "\C-cs" 'slime-selector)
 ;http://parijatmishra.wordpress.com/2008/08/14/up-and-running-with-emacs-sbcl-and-slime/
-(define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-(define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-(define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-(define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+;(define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+;(define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+;(define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+;(define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
 (define-key slime-mode-map (kbd "C-c ]") 'slime-close-all-parens-in-sexp)
 (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
 
@@ -166,4 +166,3 @@
 ;; (global-set-key (kbd "M-Z") 'zap-up-to-char)
 ;; (global-set-key (kbd "M-F") 'forward-to-word)
 ;; (global-set-key (kbd "M-B") 'backward-to-word)
-
