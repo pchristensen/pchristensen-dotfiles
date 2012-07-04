@@ -34,7 +34,6 @@
 (vendor 'yaml-mode)
 (vendor 'feature-mode)
 (vendor 'rspec-mode)
-(vendor 'slime)
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
 (vendor 'idomenu)
 (vendor 'theme-manager)
@@ -50,6 +49,7 @@
 (vendor-package 'paredit "22")
 (vendor-package 'autopair "0.3")
 (vendor-package 'magit "1.1.1" 'magit-status)
+(vendor-package 'slime "20100404.1")
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html (need to figure out 256 color solution first)
 
 (load "pchristensen/bindings")
