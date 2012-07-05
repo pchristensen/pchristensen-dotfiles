@@ -1,11 +1,17 @@
 
 ;; pretty colors
-(if (fboundp 'color-theme-initialize) (color-theme-initialize))
-(setq color-theme-is-global t)
-(color-theme-dark-laptop) ;; For osx terminal
+;; (if (fboundp 'color-theme-initialize) (color-theme-initialize))
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)))
+
+;; (setq color-theme-is-global t)
+
+;; (color-theme-dark-laptop) ;; For osx terminal
 ;; (color-theme-euphoria) ;; For puttyterminal
-;(color-theme-dark-laptop)
-;(color-theme-tty-dark)
+;; (color-theme-dark-laptop)
+;; (color-theme-tty-dark)
 
 ;; (vendor 'color-theme-ir-black)
 ;; (color-theme-ir-black)
@@ -26,5 +32,5 @@
 ;; (define-key global-map [f5] 'theme-prev)
 ;; (define-key global-map [f6] 'theme-next)
 
-(set-face-foreground 'region "white")
-(set-face-background 'region "slategray")
+;; (set-face-foreground 'region "white")
+;; (set-face-background 'region "slategray")
