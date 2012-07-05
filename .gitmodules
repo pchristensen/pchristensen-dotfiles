@@ -4,24 +4,15 @@
 [submodule "emacs.d/vendor/haml-mode"]
 	path = emacs.d/vendor/haml-mode
 	url = http://github.com/nex3/haml-mode
-[submodule "emacs.d/vendor/color-theme"]
-	path = emacs.d/vendor/color-theme
-	url = https://github.com/emacsmirror/color-theme.git
 [submodule "emacs.d/vendor/undo-tree"]
 	path = emacs.d/vendor/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
-[submodule "emacs.d/vendor/paredit"]
-	path = emacs.d/vendor/paredit
-	url = https://github.com/emacsmirror/paredit.git
 [submodule "emacs.d/vendor/yaml-mode"]
 	path = emacs.d/vendor/yaml-mode
 	url = https://github.com/yoshiki/yaml-mode.git
 [submodule "emacs.d/vendor/feature-mode"]
 	path = emacs.d/vendor/feature-mode
 	url = https://github.com/michaelklishin/cucumber.el.git
-[submodule "emacs.d/vendor/yasnippet"]
-	path = emacs.d/vendor/yasnippet
-	url = https://github.com/emacsmirror/yasnippet.git
 [submodule "emacs.d/vendor/yasnippets-rails"]
 	path = emacs.d/vendor/yasnippets-rails
 	url = https://github.com/eschulte/yasnippets-rails.git
@@ -31,9 +22,6 @@
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
-[submodule "emacs.d/vendor/autopair"]
-	path = emacs.d/vendor/autopair
-	url = https://github.com/emacsmirror/autopair.git
 [submodule "emacs.d/vendor/auto-complete"]
 	path = emacs.d/vendor/auto-complete
 	url = https://github.com/m2ym/auto-complete.git
@@ -43,9 +31,6 @@
 [submodule "bin/cmd-key-happy"]
 	path = bin/cmd-key-happy
 	url = https://github.com/aim-stuff/cmd-key-happy.git
-[submodule "emacs.d/vendor/color-theme-ir-black"]
-	path = emacs.d/vendor/color-theme-ir-black
-	url = https://github.com/rmm5t/color-theme-ir-black.git
 [submodule "emacs.d/vendor/rinari"]
 	path = emacs.d/vendor/rinari
 	url = https://github.com/eschulte/rinari.git
