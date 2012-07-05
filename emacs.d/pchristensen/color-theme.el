@@ -1,14 +1,9 @@
 
 ;; pretty colors
-;; (if (fboundp 'color-theme-initialize) (color-theme-initialize))
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-hober)))
+(if (fboundp 'color-theme-initialize) (color-theme-initialize))
+(setq color-theme-is-global t)
 
-;; (setq color-theme-is-global t)
-
-;; (color-theme-dark-laptop) ;; For osx terminal
+(color-theme-dark-laptop) ;; For osx terminal
 ;; (color-theme-euphoria) ;; For puttyterminal
 ;; (color-theme-dark-laptop)
 ;; (color-theme-tty-dark)

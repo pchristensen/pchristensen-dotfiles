@@ -44,7 +44,7 @@
 (vendor 'smex)
 (vendor 'mo-git-blame  'mo-git-blame-file 'mo-git-blame-current)
 (vendor 'package)
-(vendor 'color-theme)
+(vendor-package 'color-theme "6.5.5")
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html (need to figure out 256 color solution first)
 
 (load "pchristensen/bindings")

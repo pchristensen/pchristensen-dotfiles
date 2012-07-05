@@ -21,6 +21,25 @@
     (when (file-exists-p (concat personal ".el"))
       (load personal))))
 
+(defun vendor-package (library version &rest autoload-functions)
+  (let* ((file (symbol-name library))
+         (package-directory (concat file "-" version))
+         (normal (concat "~/.emacs.d/elpa/" package-directory "/" file))
+         (suffix (concat normal ".el"))
+         (personal (concat "~/.emacs.d/pchristensen/" file))
+         (found nil))
+    (cond
+     ((file-directory-p normal) (add-to-list 'load-path normal) (set 'found t))
+     ((file-directory-p suffix) (add-to-list 'load-path suffix) (set 'found t))
+     ((file-exists-p suffix)  (set 'found t)))
+    (when found
+      (if autoload-functions
+          (dolist (autoload-function autoload-functions)
+            (autoload autoload-function (symbol-name library) nil t))
+        (require library)))
+    (when (file-exists-p (concat personal ".el"))
+      (load personal))))
+
 ;; TODO Bind insert-arrow to something, sounds awesome
 ;; Arrows are common, especially in ruby
 (defun insert-arrow ()
