@@ -250,3 +250,35 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 (setq-default kill-read-only-ok t)
 
+(defconst yic-ignore-patterns
+  (concat
+   "^ "                 ;hidden buffers
+   "\\|completion\\|summary"
+   "\\|buffer list\\|help$\\|ispell\\|abbrev"
+   "\\|temp\\|tmp\\|post\\|tff")
+  "*Buffers to ignore when changing to another.")
+
+(defun yic-next (list)
+  "Switch to next buffer in list, skipping unwanted ones."
+  (let* ((ignore_patterns  yic-ignore-patterns)
+         buffer go)
+    (while (and list (null go))
+      (setq buffer (car list))
+      (if (string-match ignore_patterns (buffer-name buffer))
+          (setq list (cdr list))
+        (setq go buffer)))
+    (if go (switch-to-buffer go))))
+
+(defun yic-prev-buffer ()
+  "Switch to previous buffer in current window."
+  (interactive)
+  (yic-next (reverse (buffer-list))))
+
+(defun yic-next-buffer ()
+  "Switch to the other buffer (2nd in list-buffer) in current window."
+  (interactive)
+  (bury-buffer (current-buffer))
+  (yic-next (buffer-list)))
+
+(global-set-key "\M-n" 'yic-prev-buffer)
+(global-set-key "\M-m" 'yic-next-buffer)
