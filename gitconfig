@@ -45,6 +45,7 @@
 
   # diff
   d = !sh -c 'clear && git diff $1' -
+  d1 = !sh -c 'clear && git diff HEAD~1 HEAD' -
   ds = diff --cached
   dw = diff --word-diff
   dsw = diff --cached --word-diff
