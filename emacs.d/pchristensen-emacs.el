@@ -37,7 +37,7 @@
 (vendor 'full-ack      'ack 'ack-same 'ack-find-same-file 'ack-find-file 'ack-interactive)
 (vendor 'idomenu)
 (vendor 'theme-manager)
-(vendor 'auto-complete)
+; (vendor 'auto-complete)
 (vendor 'csv-mode      'csv-mode)
 (vendor 'smex)
 (vendor 'mo-git-blame  'mo-git-blame-file 'mo-git-blame-current)
