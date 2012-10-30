@@ -106,23 +106,12 @@ if [[ -n "$PS1" ]] ; then
   VISUAL="e"
 
 
-  ## RVM Settings
-
-
-
-    ## GROUPON
-    export PATH=$PATH:/Users/peterchristensen/bin/cassandra/bin
-    export PATH=$PATH:/Users/peterchristensen/bin
-    export DEPLOYER=peterc
   ## Export paths
   export PATH=/home/peter/bin:$PATH
+  export PATH=/Users/pchristensen/bin:$PATH
   export PATH=/usr/local/mysql/bin:$PATH
   export PATH=/usr/local/bin:$PATH
   export PATH=.:$PATH
-
-  ## GROUPON
-  alias gprep="rake db:migrate:reset;rake db:seed;rake db:test:prepare;rake spec:fixture_builder:rebuild;rake parallel:recreate CORES=4;rake log:clear"
-  alias mcstart="memcached -d -p 11211"
 
   alias ll="ls -lF"
   alias la="ls -lAF"
