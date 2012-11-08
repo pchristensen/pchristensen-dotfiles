@@ -15,6 +15,7 @@
 (add-hook 'ruby-mode-hook '(lambda () (inf-ruby-keys)))
 (add-hook 'ruby-mode-hook
           (lambda () (run-hooks 'pchristensen-code-modes-hook)))
+(setq ruby-deep-arglist nil)
 
 ;; ;; TODO Ruby Mode - figure out what his stuff does
 ;;; Ruby
@@ -24,6 +25,23 @@
    "Evaluate the buffer with ruby."
    (interactive)
    (shell-command-on-region (point-min) (point-max) "ruby"))
+
+;; Fix close-paren indentation
+;; http://stackoverflow.com/questions/7961533/emacs-ruby-method-parameter-indentation
+(defadvice ruby-indent-line (after unindent-closing-paren activate)
+  (let ((column (current-column))
+        indent offset)
+    (save-excursion
+      (back-to-indentation)
+      (let ((state (syntax-ppss)))
+        (setq offset (- column (current-column)))
+        (when (and (eq (char-after) ?\))
+                   (not (zerop (car state))))
+          (goto-char (cadr state))
+          (setq indent (current-indentation)))))
+    (when indent
+      (indent-line-to indent)
+      (when (> offset 0) (forward-char offset)))))
 
 ;; FIXME: it should be available in next versions of ruby-mode.el
 (defun ruby-insert-end ()
@@ -62,5 +80,3 @@
 ;;   "use the cnu-specific setting to run ruby"
 ;;   (interactive)
 ;;   (run-ruby ruby-program-name))
-
-
