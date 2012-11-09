@@ -41,47 +41,22 @@
 #### screen -ls        list current sessions
 
 ##################### SETTINGS ########################
-## Default Screens
-screen -t emacs 0
-screen -t console 1
-screen -t server 2
-screen -t bash 3
-
-## turn off startup message
-startup_message off
-
-## change escape character
-escape ^Zz
-
-## longer scrollback
-defscrollback 5000
-
-## clear screen when exiting a full screen program
-altscreen on
-
-## Turn off visible bell/flash
-vbell off
-
-#### Caption?? this might not work
-## caption always “%H %c | %-w%{=}%n-%t%{-}%+w”
+startup_message off           ## turn off startup message
+escape ^Zz                    ## change escape character
+defscrollback 5000            ## longer scrollback
+altscreen on                  ## clear screen when exiting a full screen program
+vbell off                     ## Turn off visible bell/flash
 
 ## Configure status line
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
 ## from https://github.com/rmm5t/dotfiles/blob/master/screenrc
-## hardstatus alwayslastline "%{=b}%{b}%w"
 
-## ## utf8
-## setenv LC_CTYPE en_US.UTF-8
-## defutf8 on
-
-## ## monitor activity
-## defmonitor on
-## activity "<%n>"
-## silencewait 15
-## bell_msg "DING! (%n)"
-## vbell_msg "DING! (%n)"
-## vbell on
+## Default Screens
+screen -t emacs 0
+screen -t console 1
+screen -t server 2
+screen -t terminal 3
 
 ## ## scrollbars
 termcapinfo xterm* ti@:te@
@@ -101,4 +76,3 @@ termcapinfo xterm* ti@:te@
 # Local Variables:
 # mode: shell-script
 # End:
-
