@@ -125,6 +125,7 @@ if [[ -n "$PS1" ]] ; then
   alias redwood-worker='echo -n -e "\033\]0;Redwood Worker\007"; cd ~/dev/redwood; ./script/resque.sh'
   alias redwood-server='echo -n -e "\033\]0;Redwood Server\007"; cd ~/dev/redwood; rails s -p 3001'
   alias pine-server='echo -n -e "\033\]0;Pine Server\007"; cd ~/dev/pine; rails s -p 3002'
+  alias screenm='screen -c ~/.screenrc_manilla'
   ## End Manilla
 
   ## OSX
