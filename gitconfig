@@ -59,6 +59,10 @@
 
   # log
   l = log
+  l2 = log -2
+  l3 = log -3
+  l4 = log -4  ## TODO Figure out how to parameterize this
+  h = show HEAD
   last = log @{1}..
   lw = whatchanged
 
