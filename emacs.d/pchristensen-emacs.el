@@ -23,6 +23,7 @@
 ;; (load "pchristensen/w3m") ;; Not sure if this is worth it, want to try conkeror instead
 ;; (load "pchristensen/geekstack")
 
+;;--- SUBMODULE LIBRARIES---------------
 (vendor 'ruby-mode)
 (vendor 'rinari)
 (vendor 'inf-ruby      'inf-ruby)
@@ -40,18 +41,19 @@
 (vendor 'smex)
 (vendor 'mo-git-blame  'mo-git-blame-file 'mo-git-blame-current)
 
-
+;;--- PACKAGED LIBRARIES----------------
+;; - all of the libraries are loaded by (package-initialize) in pchristensen/package.el
+;;   these calls load customizationn
 (vendor 'package)
-(vendor-package 'color-theme "6.5.5")
-(vendor-package 'clojure-mode "20121111.1347")
-(vendor-package 'paredit "20110508.1256")
-(vendor-package 'autopair "20121120.2012")
-(vendor-package 'magit "20121030.2025" 'magit-status)
-(vendor-package 'slime "20100404.1")
-(vendor-package 'sass-mode "20101019.30")
-(vendor-package 'coffee-mode "20121121.127")
-(vendor-package 'find-things-fast "20111123")
-(vendor-package 'js2-mode "20121003.531")
-;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html (need to figure out 256 color solution first)
+(vendor 'color-theme)
+(vendor 'clojure-mode)
+(vendor 'paredit)
+(vendor 'autopair)
+(vendor 'magit 'magit-status)
+(vendor 'slime)
+(vendor 'sass-mode)
+(vendor 'coffee-mode)
+(vendor 'find-things-fast)
+(vendor 'js2-mode)
 
 (load "pchristensen/bindings")
