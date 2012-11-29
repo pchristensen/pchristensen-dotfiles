@@ -98,13 +98,11 @@ if [[ -n "$PS1" ]] ; then
   #-t = force terminal mode
   #-alternate-editor='' = start daemon if it isn't already running
   alias e="emacsclient -nw --alternate-editor=''"
-  alias ed="emacs-23.3 --daemon"
   alias killemacs="emacsclient -e '(kill-emacs)'"
   alias killemacssoft="emacsclient --eval '(progn (save-some-buffers t t) (kill-emacs))'"
 
   EDITOR="e"
   VISUAL="e"
-
 
   ## Export paths
   export PATH=/home/peter/bin:$PATH
@@ -132,7 +130,6 @@ if [[ -n "$PS1" ]] ; then
   alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
   ## Ubuntu
   #alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
-  alias rack='ack --ruby --follow'
   alias aack='ack --all'
 
   alias psgrep='ps aux | grep'
@@ -183,10 +180,8 @@ fi # <- close the non-interactive guard
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Local Variables:
 # mode: shell-script
 # End:
-
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
