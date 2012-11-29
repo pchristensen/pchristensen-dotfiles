@@ -10,6 +10,11 @@
 (global-set-key "\M-4" 'windmove-left)
 (global-set-key "\M-6" 'windmove-right)
 
+(global-set-key "\e\M-[a" 'windmove-up)
+(global-set-key "\e\M-[b" 'windmove-down)
+(global-set-key "\e\M-[d" 'windmove-left)
+(global-set-key "\e\M-[c" 'windmove-right)
+
 ;;---------KEY MAPPING----------------------------------------------------------------------------------
 (global-set-key "\C-c^" 'enlarge-window)
 (global-set-key [f9] '(lambda () (interactive) (enlarge-window 5)))
@@ -17,12 +22,16 @@
 ; from http://steve.yegge.googlepages.com/effective-emacs
 ; (global-set-key "\C-x\C-m" 'execute-extended-command) ;was compose-mail ; need it to be smex - set in smex.el
 (global-set-key "\C-c\C-m" 'execute-extended-command)
+
 (global-set-key "\M-s" 'isearch-forward-regexp)
 (global-set-key "\M-r" 'isearch-backward-regexp)
+
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-ring-save)
+
 (global-set-key "\C-x\M-o" '(lambda () (interactive) (other-window -1)))
+
 (global-set-key "\M-k" 'copy-line)
 (global-set-key "\M-'" 'match-paren)  ;; was abbrev-prefix-mark
 (global-set-key (kbd "M-~") 'push-mark-no-activate)
