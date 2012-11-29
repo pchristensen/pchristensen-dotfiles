@@ -5,6 +5,8 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
 
+(package-initialize)
+
 ;; Ensure these packages are installed------------------------------------------------------------------
 ;; ref: http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
 (defvar pchristensen-packages
@@ -43,5 +45,3 @@
 
 (provide 'pchristensen-packages)
 ;;------------------------------------------------------------------------------------------------------
-
-(package-initialize)
