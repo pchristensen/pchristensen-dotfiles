@@ -10,10 +10,11 @@
 (global-set-key "\M-4" 'windmove-left)
 (global-set-key "\M-6" 'windmove-right)
 
-(global-set-key "\e\M-[a" 'windmove-up)
-(global-set-key "\e\M-[b" 'windmove-down)
-(global-set-key "\e\M-[d" 'windmove-left)
-(global-set-key "\e\M-[c" 'windmove-right)
+(global-set-key (kbd "ESC <up>") 'windmove-up)
+(global-set-key (kbd "ESC <down>") 'windmove-down)
+(global-set-key (kbd "ESC <left>") 'windmove-left)
+(global-set-key (kbd "ESC <right>") 'windmove-right)
+
 
 ;;---------KEY MAPPING----------------------------------------------------------------------------------
 (global-set-key "\C-c^" 'enlarge-window)
@@ -45,6 +46,7 @@
 ;(define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
 ;(define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
 
+;; TODO I bet a bunch of these are default in the new version of paredit
 (define-key slime-mode-map (kbd "[") 'paredit-open-parenthesis)
 (define-key slime-mode-map (kbd "]") 'paredit-close-parenthesis)
 (define-key slime-mode-map (kbd "RET") 'paredit-newline)
@@ -54,8 +56,6 @@
 (define-key slime-mode-map (kbd "C-M-b") 'paredit-backward)
 (define-key slime-mode-map (kbd "M-(") 'paredit-wrap-sexp)
 (define-key slime-mode-map (kbd "M-s") 'paredit-splice-sexp)
-(define-key slime-mode-map (kbd "ESC <up>") 'paredit-splice-sexp-killing-backward)
-(define-key slime-mode-map (kbd "ESC <down>") 'paredit-splice-sexp-killing-forward)
 (define-key slime-mode-map (kbd "M-r") 'paredit-raise-sexp)
 (define-key slime-mode-map (kbd "(") (lambda () (interactive) (insert "[")))
 (define-key slime-mode-map (kbd ")") (lambda () (interactive) (insert "]")))
