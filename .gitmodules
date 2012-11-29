@@ -1,9 +1,3 @@
-[submodule "emacs.d/vendor/sass-mode"]
-	path = emacs.d/vendor/sass-mode
-	url = https://github.com/nex3/sass-mode.git
-[submodule "emacs.d/vendor/haml-mode"]
-	path = emacs.d/vendor/haml-mode
-	url = http://github.com/nex3/haml-mode
 [submodule "emacs.d/vendor/undo-tree"]
 	path = emacs.d/vendor/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
