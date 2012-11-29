@@ -65,6 +65,8 @@ if [[ -n "$PS1" ]] ; then
       ;;
   esac
 
+  export TERM=xterm-256color
+
   # Alias definitions.
   # You may want to put all your additions into a separate file like
   # ~/.bash_aliases, instead of adding them here directly.
