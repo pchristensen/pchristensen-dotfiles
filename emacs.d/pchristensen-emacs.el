@@ -50,6 +50,7 @@
 (vendor-package 'slime "20100404.1")
 (vendor-package 'sass-mode "3.0.14")
 (vendor-package 'coffee-mode "0.4.1")
+(vendor-package 'find-things-fast "20111123")
 (vendor-package 'js2-mode "20090814")
 ;; TODO Add rainbow-mode http://julien.danjou.info/rainbow-mode.html (need to figure out 256 color solution first)
 
