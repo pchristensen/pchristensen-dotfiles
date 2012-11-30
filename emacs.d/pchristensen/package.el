@@ -12,6 +12,7 @@
 (defvar pchristensen-packages
   '(autopair
     clojure-mode
+    clojurescript-mode
     coffee-mode
     color-theme
     find-things-fast
