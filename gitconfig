@@ -45,31 +45,33 @@
 
   # diff
   d = !sh -c 'clear && git diff $1' -
-  d1 = !sh -c 'clear && git diff HEAD~1 HEAD' -
-  ds = diff --cached
-  dw = diff --word-diff
-  dsw = diff --cached --word-diff
+  dl = !sh -c 'clear && git diff HEAD~1 HEAD' -
+  dc = diff --cached
+  di = diff --word-diff
 
   # add
   a = add
-  aa = !git add -u && git add . && git status    # add all and review
+  aa = add --all
   ai = add --interactive
   ap = add -p
   au = add -u                                    # add all changed (but not new) files to stage
 
   # log
   l = log
-  l2 = log -2
-  l3 = log -3
-  l4 = log -4  ## TODO Figure out how to parameterize this
   h = show HEAD
   last = log @{1}..
   lw = whatchanged
 
+  ## Gary Bernhardt's fancy git log
+
+  gbl = "!. ~/.githelpers && pretty_git_log"
+  r = !git gbl -30
+  ra = !git r --all
+
+
   co = checkout
   b = branch
   f = fetch
-  r = reset
   p = push
   w = show
   y = cherry-pick
