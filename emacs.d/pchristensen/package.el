@@ -15,17 +15,22 @@
     clojurescript-mode
     coffee-mode
     color-theme
+    color-theme-sanityinc-tomorrow
     find-things-fast
     haml-mode
     js2-mode
     magit
     melpa
+    nrepl
+    nrepl-eval-sexp-fu
+    nrepl-ritz
     paredit
     rainbow-delimiters
     rainbow-mode
     sass-mode
     slime
     yaml-mode
+    zen-and-art-theme
     zenburn-theme)
   "A list of packages to ensure are installed at launch.")
 
