@@ -1,4 +1,9 @@
-;;;--------RUBY--------------------------------------------------------------------------------------------------
+;;;--------RUBY----------------------------------------------------------------------
+
+(define-key ruby-mode-map (kbd "RET") 'ruby-reindent-then-newline-and-indent)
+
+
+;;;;;;;;;;;;   TODO Everything below here is crufty and suspect   ;;;;;;;;;;;;;;;
 ;; rmm5t's warning about using deprecated ruby-mode (https://github.com/rmm5t/dotfiles/commit/53e4c06ab246093943a24f88b88e99b11d1575cc)
 ;; Switched to the old, deprecated, Ruby-team ruby-mode for stability
 
