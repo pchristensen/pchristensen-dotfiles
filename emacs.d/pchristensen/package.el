@@ -9,30 +9,33 @@
 
 ;; Ensure these packages are installed------------------------------------------------------------------
 ;; ref: http://batsov.com/articles/2012/02/19/package-management-in-emacs-the-good-the-bad-and-the-ugly/
-(defvar pchristensen-packages
-  '(autopair
-    clojure-mode
-    clojurescript-mode
-    coffee-mode
-    color-theme
-    color-theme-sanityinc-tomorrow
-    find-things-fast
-    haml-mode
-    js2-mode
-    magit
-    melpa
-    nrepl
-    nrepl-eval-sexp-fu
-    nrepl-ritz
-    paredit
-    rainbow-delimiters
-    rainbow-mode
-    sass-mode
-    slime
-    yaml-mode
-    zen-and-art-theme
-    zenburn-theme)
+(defvar pchristensen-packages ()
   "A list of packages to ensure are installed at launch.")
+
+(defun set-pchristensen-packages ()
+  (setq pchristensen-packages '(autopair
+                                clojure-mode
+                                clojurescript-mode
+                                coffee-mode
+                                color-theme
+                                color-theme-sanityinc-tomorrow
+                                find-things-fast
+                                haml-mode
+                                js2-mode
+                                magit
+                                melpa
+                                nrepl
+                                nrepl-eval-sexp-fu
+                                nrepl-ritz
+                                paredit
+                                rainbow-delimiters
+                                rainbow-mode
+                                sass-mode
+                                slime
+                                yaml-mode
+                                zen-and-art-theme
+                                zenburn-theme)))
+
 
 (defun pchristensen-packages-installed-p ()
   (loop for p in pchristensen-packages
