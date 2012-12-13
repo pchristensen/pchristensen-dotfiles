@@ -8,3 +8,4 @@
   (nrepl-switch-to-repl-buffer))
 
 (define-key clojure-mode-map (kbd "C-c C-p") 'force-nrepl-switch-to-repl-buffer)
+(define-key clojure-mode-map (kbd "RET") 'paredit-newline)
