@@ -55,5 +55,6 @@
 (vendor 'coffee-mode)
 (vendor 'find-things-fast)
 (vendor 'js2-mode)
+(vendor 'nrepl)
 
 (load "pchristensen/bindings")
