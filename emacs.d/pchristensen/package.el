@@ -43,15 +43,17 @@
         when (not (package-installed-p p)) do (return nil)
         finally (return t)))
 
-(unless (pchristensen-packages-installed-p)
-  ;; check for new packages (package versions)
-  (message "%s" "Emacs is now refreshing its package database...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; install the missing packages
-  (dolist (p pchristensen-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
+(defun verify-packages-installed ()
+  (unless (pchristensen-packages-installed-p)
+    ;; check for new packages (package versions)
+    (message "%s" "Emacs is now refreshing its package database...")
+    (package-refresh-contents)
+    (message "%s" " done.")
+    ;; install the missing packages
+    (dolist (p pchristensen-packages)
+      (when (not (package-installed-p p))
+        (package-install p)))))
 
+(verify-packages-installed)
 (provide 'pchristensen-packages)
 ;;------------------------------------------------------------------------------------------------------
