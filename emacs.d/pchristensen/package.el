@@ -19,6 +19,7 @@
                                 coffee-mode
                                 color-theme
                                 color-theme-sanityinc-tomorrow
+                                diminish
                                 find-things-fast
                                 haml-mode
                                 js2-mode
