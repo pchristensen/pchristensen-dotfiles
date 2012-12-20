@@ -22,6 +22,7 @@
                                 diminish
                                 elisp-slime-nav
                                 find-things-fast
+                                golden-ratio
                                 haml-mode
                                 js2-mode
                                 magit
