@@ -9,7 +9,6 @@
 (load "pchristensen/global")
 (load "pchristensen/defuns")
 (load "pchristensen/tabs")
-(load "pchristensen/disabled")
 (load "pchristensen/utf-8")
 (load "pchristensen/grep")
 (load "pchristensen/diff")
@@ -20,8 +19,6 @@
 (load "pchristensen/flymake")
 (load "pchristensen/hl-line")
 (load "pchristensen/info")
-;; (load "pchristensen/w3m") ;; Not sure if this is worth it, want to try conkeror instead
-;; (load "pchristensen/geekstack")
 
 ;;--- SUBMODULE LIBRARIES---------------
 (vendor 'ruby-mode)
