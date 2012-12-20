@@ -20,6 +20,7 @@
                                 color-theme
                                 color-theme-sanityinc-tomorrow
                                 diminish
+                                elisp-slime-nav
                                 find-things-fast
                                 haml-mode
                                 js2-mode
