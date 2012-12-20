@@ -43,18 +43,6 @@
 
 ;;--- PACKAGED LIBRARIES----------------
 ;; - all of the libraries are loaded by (package-initialize) in pchristensen/package.el
-;;   these calls load customizationn
 (vendor 'package)
-(vendor 'color-theme)
-(vendor 'clojure-mode)
-(vendor 'paredit)
-(vendor 'autopair)
-(vendor 'magit 'magit-status)
-(vendor 'slime)
-(vendor 'sass-mode)
-(vendor 'coffee-mode)
-(vendor 'find-things-fast)
-(vendor 'js2-mode)
-(vendor 'nrepl)
 
 (load "pchristensen/bindings")

@@ -54,6 +54,15 @@
       (when (not (package-installed-p p))
         (package-install p)))))
 
-(verify-packages-installed)
+(defun vendor-load-packages ()
+  "Verify that all packages in pchristensen-packages are installed.
+Then load them along with any local customizations."
+  (set-pchristensen-packages)
+  (verify-packages-installed)
+  (dolist (p pchristensen-packages)
+    (vendor p)))
+
+(vendor-load-packages)
+
 (provide 'pchristensen-packages)
 ;;------------------------------------------------------------------------------------------------------
