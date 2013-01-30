@@ -6,7 +6,8 @@
 ;; For osx terminal
 ;; (color-theme-euphoria) ;; For puttyterminal
 ;; (color-theme-dark-laptop)
-(color-theme-tty-dark)
+; (color-theme-tty-dark)
+
 
 ;; (vendor 'color-theme-ir-black)
 ;; (color-theme-ir-black)
