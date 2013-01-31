@@ -6,6 +6,7 @@
   editor = emacsclient -nw --alternate-editor=''
 [color]
   ui = auto
+  diff = true
 
 [apply]
   whitespace=fix
