@@ -50,6 +50,17 @@
 
 (setq kill-whole-line t)
 
+;; http://whattheemacsd.com/sane-defaults.el-01.html-------------
+;; Auto refresh buffers
+(global-auto-revert-mode 1)
+
+;; Also auto refresh dired, but be quiet about it
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
+
+;;---------------------------------------------------------------
+
+
 ;;----------UNIQUIFY-----------------------------------------------------------------------------------
 ;; make duplicate buffer names clearer
 (require 'uniquify)
@@ -60,6 +71,3 @@
 ;; (setq-default ispell-program-name "aspell")
 ;; (setq ispell-list-command "list")
 ;; (setq ispell-extra-args '("--sug-mode=ultra"))
-
-;; ;; TODO This seems dangerous to do silently, but I like the idea
-;; (global-auto-revert-mode 1)
