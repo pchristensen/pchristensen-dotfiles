@@ -19,7 +19,7 @@
 
 ;; Show line and column numbers in the status bad
 (setq column-number-mode 1)
-(global-linum-mode 1)
+(global-linum-mode 0)
 
 ; from http://steve.yegge.googlepages.com/effective-emacs
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
