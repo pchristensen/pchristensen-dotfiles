@@ -102,16 +102,6 @@
 	   (set-window-start w1 s2)
 	   (set-window-start w2 s1)))))
 
-(defun rename-file-and-buffer (new-name)
- "Renames both current buffer and file it's visiting to NEW-NAME." (interactive "sNew name: ")
- (let ((name (buffer-name))
-       (filename (buffer-file-name)))
- (if (not filename)
-     (message "Buffer '%s' is not visiting a file!" name)
- (if (get-buffer new-name)
-      (message "A buffer named '%s' already exists!" new-name)
-   (progn  (rename-file name new-name 1)  (rename-buffer new-name)  (set-visited-file-name new-name)  (set-buffer-modified-p nil))))))
-
 (defun move-buffer-file (dir)
  "Moves both current buffer and file it's visiting to DIR." (interactive "DNew directory: ")
  (let* ((name (buffer-name))
@@ -123,6 +113,27 @@
  (if (not filename)
      (message "Buffer '%s' is not visiting a file!" name)
    (progn (copy-file filename newname 1) (delete-file filename) (set-visited-file-name newname) (set-buffer-modified-p nil) t))))
+
+;;http://whattheemacsd.com/file-defuns.el-01.html------------------
+(defun rename-current-buffer-file ()
+  "Renames current buffer and file it is visiting."
+  (interactive)
+  (let ((name (buffer-name))
+        (filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (let ((new-name (read-file-name "New name: " filename)))
+        (if (get-buffer new-name)
+            (error "A buffer named '%s' already exists!" new-name)
+          (rename-file filename new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+          (set-buffer-modified-p nil)
+          (message "File '%s' successfully renamed to '%s'"
+                   name (file-name-nondirectory new-name)))))))
+
+(global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
+;;-----------------------------------------------------------------
 
 ;;;------------------IDO-TAGS-----------------------------------------------------------------------------------------------------
 ;;http://www.masteringemacs.org/articles/2011/01/14/effective-editing-movement/ #TAGS
