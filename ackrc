@@ -4,8 +4,9 @@ haml=haml
 --type-set
 coffeescript=coffee
 
+--type-add
+clojure=.cljs
 
 # Local Variables:
 # mode: shell-script
 # End:
-
