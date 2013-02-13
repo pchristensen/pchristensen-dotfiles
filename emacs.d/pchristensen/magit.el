@@ -17,6 +17,8 @@
        (interactive)
        (magit-run-git-async "pull" "--rebase" "-v"))))
 
+(require 'magit)
+
 ;; http://whattheemacsd.com/setup-magit.el-01.html-----------------
 (defadvice magit-status (around magit-fullscreen activate)
   (window-configuration-to-register :magit-fullscreen)

@@ -12,13 +12,17 @@
 (load "pchristensen/utf-8")
 (load "pchristensen/grep")
 (load "pchristensen/diff")
-(load "pchristensen/ido")
-(load "pchristensen/dired")
 (load "pchristensen/recentf")
 (load "pchristensen/zoom")
 (load "pchristensen/flymake")
 (load "pchristensen/hl-line")
 (load "pchristensen/info")
+
+(vendor 'undo-tree)
+
+;;--- PACKAGED LIBRARIES----------------
+;; - all of the libraries are loaded by (package-initialize) in pchristensen/package.el
+(vendor 'package)
 
 ;;--- SUBMODULE LIBRARIES---------------
 (vendor 'ruby-mode)
@@ -27,7 +31,6 @@
 (vendor 'yari)
 (vendor 'haml-mode)
 (vendor 'erlang)
-(vendor 'undo-tree)
 (vendor 'yaml-mode)
 (vendor 'feature-mode)
 (vendor 'rspec-mode)
@@ -37,9 +40,8 @@
 (vendor 'csv-mode      'csv-mode)
 (vendor 'smex)
 (vendor 'mo-git-blame  'mo-git-blame-file 'mo-git-blame-current)
+(vendor 'ido)
+(vendor 'dired)
 
-;;--- PACKAGED LIBRARIES----------------
-;; - all of the libraries are loaded by (package-initialize) in pchristensen/package.el
-(vendor 'package)
 
 (load "pchristensen/bindings")
