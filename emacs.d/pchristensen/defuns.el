@@ -21,7 +21,7 @@
     (when (file-exists-p (concat personal ".el"))
       (load personal))))
 
-;; http://whattheemacsd.com/key-bindings.el-01.html
+;; http://whattheemacsd.com/key-bindings.el-01.html------------------
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
@@ -31,6 +31,21 @@
         (linum-mode 1)
         (goto-line (read-number "Goto line: ")))
     (linum-mode -1)))
+;;------------------------------------------------------------------
+
+;; http://stackoverflow.com/questions/145291/smart-home-in-emacs----
+(defun smart-beginning-of-line ()
+  "Move point to first non-whitespace character or beginning-of-line.
+Move point to the first non-whitespace character on this line.
+If point was already at that position, move point to beginning of line."
+  (interactive) ; Use (interactive "^") in Emacs 23 to make shift-select work
+  (let ((oldpos (point)))
+    (back-to-indentation)
+    (and (= oldpos (point))
+         (beginning-of-line))))
+
+(global-set-key (kbd "C-a") 'smart-beginning-of-line)
+;;------------------------------------------------------------------
 
 ;; TODO Bind insert-arrow to something, sounds awesome
 ;; Arrows are common, especially in ruby
