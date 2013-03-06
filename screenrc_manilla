@@ -66,12 +66,15 @@ hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*f%t%?(%u)%
 
 ## Default Screens
 screen -t emacs 0
-screen -t cypress-server 1
-screen -t cypress-console 2
-screen -t cypress-terminal 3
-screen -t cypress-worker 4
-screen -t banyan-worker 5
-screen -t spork 6
+screen -t c-server 1
+screen -t c-console 2
+screen -t c-terminal 3
+screen -t r-terminal 4
+screen -t r-console 5
+screen -t r-server 6
+screen -t c-worker 7
+screen -t b-worker 8
+screen -t r-worker 9
 
 ## ## scrollbars
 termcapinfo xterm* ti@:te@
