@@ -24,6 +24,7 @@
                                 find-things-fast
                                 golden-ratio
                                 haml-mode
+                                jade-mode
                                 js2-mode
                                 magit
                                 melpa
