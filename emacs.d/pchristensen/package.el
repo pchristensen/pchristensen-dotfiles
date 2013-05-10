@@ -36,6 +36,7 @@
                                 rainbow-mode
                                 sass-mode
                                 slime
+                                undo-tree
                                 yaml-mode
                                 zen-and-art-theme
                                 zenburn-theme)))
