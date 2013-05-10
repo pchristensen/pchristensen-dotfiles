@@ -18,7 +18,6 @@
 (load "pchristensen/hl-line")
 (load "pchristensen/info")
 
-(vendor 'undo-tree)
 
 ;;--- PACKAGED LIBRARIES----------------
 ;; - all of the libraries are loaded by (package-initialize) in pchristensen/package.el

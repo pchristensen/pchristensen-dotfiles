@@ -19,7 +19,6 @@
                                 coffee-mode
                                 color-theme
                                 color-theme-sanityinc-tomorrow
-                                diminish
                                 elisp-slime-nav
                                 find-things-fast
                                 golden-ratio
@@ -39,7 +38,9 @@
                                 undo-tree
                                 yaml-mode
                                 zen-and-art-theme
-                                zenburn-theme)))
+                                zenburn-theme
+                                diminish
+                                )))
 
 
 (defun pchristensen-packages-installed-p ()
