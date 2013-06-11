@@ -21,3 +21,5 @@
 (defun js2-before-save ()
   (when js2-cleanup-whitespace
     (delete-trailing-whitespace)))
+
+(define-key js2-mode-map (kbd "C-c C-f") 'ido-find-file)
