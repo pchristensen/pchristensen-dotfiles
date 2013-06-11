@@ -59,7 +59,9 @@
 (setq auto-revert-verbose nil)
 
 ;;---------------------------------------------------------------
-
+;; http://emacsredux.com/blog/2013/04/21/camelcase-aware-editing/
+;; enable for all programming modes
+(add-hook 'prog-mode-hook 'subword-mode)
 
 ;;----------UNIQUIFY-----------------------------------------------------------------------------------
 ;; make duplicate buffer names clearer
