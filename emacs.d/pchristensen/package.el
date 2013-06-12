@@ -41,6 +41,7 @@
                                 slime
                                 sws-mode
                                 undo-tree
+                                web-mode
                                 yaml-mode
                                 zen-and-art-theme
                                 zenburn-theme
