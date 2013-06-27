@@ -18,11 +18,15 @@
                                 clojurescript-mode
                                 coffee-mode
                                 color-theme
+                                color-theme-solarized
                                 color-theme-sanityinc-tomorrow
+                                dired-details
                                 elisp-slime-nav
                                 find-things-fast
+                                fringe-helper
                                 golden-ratio
                                 haml-mode
+                                ido-ubiquitous
                                 jade-mode
                                 js2-mode
                                 magit
@@ -35,7 +39,9 @@
                                 rainbow-mode
                                 sass-mode
                                 slime
+                                sws-mode
                                 undo-tree
+                                web-mode
                                 yaml-mode
                                 zen-and-art-theme
                                 zenburn-theme
