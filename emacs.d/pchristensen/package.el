@@ -13,7 +13,8 @@
   "A list of packages to ensure are installed at launch.")
 
 (defun set-pchristensen-packages ()
-  (setq pchristensen-packages '(autopair
+  (setq pchristensen-packages '(ag
+                                autopair
                                 clojure-mode
                                 clojurescript-mode
                                 coffee-mode
