@@ -8,9 +8,5 @@
   (interactive (ack-interactive))
   (ack pattern regexp default-directory))
 
-(defun ack-groupon (pattern &optional regexp directory)
-  (interactive (ack-interactive))
-  (ack pattern regexp "~/Projects/web/"))
-
 ;; On Ubuntu
 ;(setq ack-executable (executable-find "ack-grep"))
