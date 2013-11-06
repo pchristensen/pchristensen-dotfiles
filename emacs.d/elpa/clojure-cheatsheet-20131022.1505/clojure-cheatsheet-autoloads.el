@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (clojure-cheatsheet) "clojure-cheatsheet" "clojure-cheatsheet.el"
-;;;;;;  (20997 26190 0 0))
+;;;;;;  (21113 60364 0 0))
 ;;; Generated autoloads from clojure-cheatsheet.el
 
 (autoload 'clojure-cheatsheet "clojure-cheatsheet" "\
@@ -14,8 +14,8 @@ Use helm to show a Clojure cheatsheet.
 
 ;;;***
 
-;;;### (autoloads nil nil ("clojure-cheatsheet-pkg.el") (20997 26190
-;;;;;;  832535 0))
+;;;### (autoloads nil nil ("clojure-cheatsheet-pkg.el") (21113 60364
+;;;;;;  482773 0))
 
 ;;;***
 

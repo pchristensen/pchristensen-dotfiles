@@ -3,7 +3,7 @@
 ;; Copyright (C) 2013 Shinji Tanaka
 ;; Author:  Shinji Tanaka <shinji.tanaka@gmail.com>
 ;; Created: 17 Feb 2013
-;; Version: 20130417.1034
+;; Version: 20131028.1417
 ;; X-Original-Version: 0.0.4
 ;; URL: https://github.com/stanaka/dash-at-point
 ;;
@@ -68,23 +68,33 @@
 (defcustom dash-at-point-mode-alist
   '((c++-mode . "cpp")
     (c-mode . "c")
+    (clojure-mode . "clojure")
     (coffee-mode . "coffee")
     (common-lisp-mode . "lisp")
     (cperl-mode . "perl")
     (css-mode . "css")
+    (elixir-mode . "elixir")
     (emacs-lisp-mode . "elisp")
     (erlang-mode . "erlang")
+    (gfm-mode . "markdown")
     (go-mode . "go")
+    (groovy-mode . "groovy")
     (haskell-mode . "haskell")
     (html-mode . "html")
     (java-mode . "java")
     (js2-mode . "javascript")
+    (js3-mode . "nodejs")
+    (less-css-mode . "less")
     (lua-mode . "lua")
+    (markdown-mode . "markdown")
     (objc-mode . "iphoneos")
     (perl-mode . "perl")
     (php-mode . "php")
+    (processing-mode . "processing")
+    (puppet-mode . "puppet")
     (python-mode . "python3")
     (ruby-mode . "ruby")
+    (sass-mode . "sass")
     (scala-mode . "scala")
     (vim-mode . "vim"))
   "Alist which maps major modes to Dash docset tags.
@@ -94,6 +104,17 @@ for one or more docsets in Dash."
   :type '(repeat (cons (symbol :tag "Major mode name")
                        (string :tag "Docset tag")))
   :group 'dash-at-point)
+
+;;;###autoload
+(defvar dash-at-point-docsets (mapcar
+                               (lambda (element)
+                                 (cdr element))
+                               dash-at-point-mode-alist)
+  "Variable used to store all known Dash docsets. The default value
+is a collection of all the values from `dash-at-point-mode-alist'.
+
+Setting or appending this variable can be used to add completion
+options to `dash-at-point-with-docset'.")
 
 ;;;###autoload
 (defvar dash-at-point-docset nil
@@ -136,6 +157,24 @@ the user will be prompted to edit the search string first."
      (if (or edit-search (null thing))
          (read-string "Dash search: " search)
        search))))
+
+;;;###autoload
+(defun dash-at-point-with-docset (&optional edit-search)
+  "Search for the word at point in Dash with a chosen docset.
+The docset options are suggested from the variable
+`dash-at-point-docsets'.
+
+If the optional prefix argument EDIT-SEARCH is specified,
+the user will be prompted to edit the search string after
+choosing the docset."
+  (interactive "P")
+  (let* ((thing (thing-at-point 'symbol))
+         (docset (completing-read "Dash docset: " dash-at-point-docsets))
+         (search (if (or edit-search (null thing))
+                     (read-from-minibuffer (concat "Dash search (" docset "): "))
+                   thing)))
+    (dash-at-point-run-search
+     (concat docset ":" search))))
 
 (provide 'dash-at-point)
 
