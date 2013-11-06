@@ -4,6 +4,10 @@
 ;;; Dired
 (require 'dired)
 
+;;; Dired X
+;;; http://emacsredux.com/blog/2013/09/24/dired-jump/
+(require 'dired-x)
+
 ;; Allows recursive deletes
 (setq dired-recursive-deletes 'top)
 
