@@ -109,6 +109,7 @@ if [[ -n "$PS1" ]] ; then
   ## Export paths
   export PATH=/home/peter/bin:$PATH
   export PATH=/Users/pchristensen/bin:$PATH
+  export PATH=/Users/peterchristensen/bin:$PATH
   export PATH=/usr/local/mysql/bin:$PATH
   export PATH=/usr/local/bin:$PATH
   export PATH=.:$PATH
