@@ -25,7 +25,12 @@
 
 (define-key dired-mode-map
   (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+;;-----------------------------------------------------------------
 
+;;http://emacsredux.com/blog/2013/09/24/dired-jump/----------------
+(require 'dired-x)
+
+;;-----------------------------------------------------------------
 (defun dired-jump-to-bottom ()
   (interactive)
   (end-of-buffer)
