@@ -109,7 +109,6 @@ if [[ -n "$PS1" ]] ; then
   ## Export paths
   export PATH=/home/peter/bin:$PATH
   export PATH=/Users/pchristensen/bin:$PATH
-  export PATH=/Users/peterchristensen/bin:$PATH
   export PATH=/usr/local/mysql/bin:$PATH
   export PATH=/usr/local/bin:$PATH
   export PATH=.:$PATH
@@ -164,8 +163,7 @@ if [[ -n "$PS1" ]] ; then
   if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
     eval `$SSHAGENT $SSHAGENTARGS`
     trap "kill $SSH_AGENT_PID" 0
-    ssh-add ~/.ssh/id_rsa_vmdev_github_geekstack
-    ssh-add ~/.ssh/id_rsa_vmdev_github_pchristensen
+    ssh-add ~/.ssh/github_id_rsa
   fi
 
 fi # <- close the non-interactive guard
