@@ -107,32 +107,16 @@ if [[ -n "$PS1" ]] ; then
   VISUAL="e"
 
   ## Export paths
-  export PATH=/home/peter/bin:$PATH
-  export PATH=/Users/pchristensen/bin:$PATH
-  export PATH=/Users/peterchristensen/bin:$PATH
-  export PATH=/usr/local/mysql/bin:$PATH
   export PATH=/usr/local/bin:$PATH
+  export PATH=/Users/peter.christensen/bin:$PATH
   export PATH=.:$PATH
 
   alias ll="ls -lF"
   alias la="ls -lAF"
   alias lo="ls -ltcF"
 
-  ## Manilla Settings
-  alias banyan-worker='echo -n -e "\033\]0;Banyan Worker\007"; cd ~/dev/banyan; `cat ./script/resque.sh`'
-  alias banyan-worker-online='echo -n -e "\033\]0;Banyan Worker Online\007"; cd ~/dev/banyan; BANYAN_ENV=apples `cat ./script/resque.sh`'
-  alias cypress-worker='echo -n -e "\033\]0;Cypress Worker\007"; cd ~/dev/cypress; ./script/resque.sh'
-  alias cypress-server='echo -n -e "\033\]0;Rails Server\007"; cd ~/dev/cypress; rails s'
-  alias redwood-worker='echo -n -e "\033\]0;Redwood Worker\007"; cd ~/dev/redwood; ./script/resque.sh'
-  alias redwood-server='echo -n -e "\033\]0;Redwood Server\007"; cd ~/dev/redwood; rails s -p 3001'
-  alias pine-server='echo -n -e "\033\]0;Pine Server\007"; cd ~/dev/pine; rails s -p 3002'
-  alias screenm='screen -c ~/.screenrc_manilla'
-  ## End Manilla
-
   ## OSX
   alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
-  ## Ubuntu
-  #alias ack='ack-grep --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
   alias aack='ack --all'
 
   alias psgrep='ps aux | grep'
@@ -175,8 +159,6 @@ if [[ -n "$PS1" ]] ; then
   if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
     eval `$SSHAGENT $SSHAGENTARGS`
     trap "kill $SSH_AGENT_PID" 0
-    ssh-add ~/.ssh/id_rsa_vmdev_github_geekstack
-    ssh-add ~/.ssh/id_rsa_vmdev_github_pchristensen
   fi
 
 fi # <- close the non-interactive guard
