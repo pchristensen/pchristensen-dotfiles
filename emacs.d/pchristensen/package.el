@@ -25,6 +25,7 @@
                                 elisp-slime-nav
                                 find-things-fast
                                 fringe-helper
+                                git-timemachine
                                 golden-ratio
                                 haml-mode
                                 ido-ubiquitous
