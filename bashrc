@@ -159,6 +159,7 @@ if [[ -n "$PS1" ]] ; then
   if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
     eval `$SSHAGENT $SSHAGENTARGS`
     trap "kill $SSH_AGENT_PID" 0
+    # ssh-add ~/.ssh/github_id_rsa
   fi
 
 fi # <- close the non-interactive guard
