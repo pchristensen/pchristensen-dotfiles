@@ -28,6 +28,7 @@
                                 git-timemachine
                                 golden-ratio
                                 haml-mode
+                                hungry-delete
                                 ido-ubiquitous
                                 jade-mode
                                 js2-mode
