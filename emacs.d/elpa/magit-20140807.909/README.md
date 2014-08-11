@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/magit/magit.png?branch=maint,master,next)](https://travis-ci.org/magit/magit)
+[![Build Status](https://travis-ci.org/magit/magit.svg?branch=master)](https://travis-ci.org/magit/magit)
+[![Gittip](http://img.shields.io/gittip/magit.png)](https://www.gittip.com/magit)
 
 It's Magit!  An Emacs mode for Git
 ==================================
@@ -8,24 +9,24 @@ implemented as an [Emacs][emacs] extension.
 
 Unlike Emacs' native [Version Control][vc] package which strives to
 provide a unified interface to various version control systems, Magit
-only supports Git and can therefor better take advantage of its native
+only supports Git and can therefore better take advantage of its native
 features.
 
 Magit supports GNU Emacs 23.2 or later; 24.1 or later is recommended.
 Magit supports Git 1.7.2.5 or later; 1.8.2 or later is recommended.
 The minimal versions are those available in Debian oldstable.
 
-Table of Contents
-=================
+### Table of Contents
 
 * [Getting Started](#getting-started)
 * [Getting Help](#getting-help)
+* [Contributions](#contributions)
 * [Installation](#installation)
   * [Installing from Melpa](#installing-from-melpa)
+  * [Installing from Marmalade](#installing-from-marmalade)
   * [Installing from Git](#installing-from-git)
   * [Installing from Tarball](#installing-from-tarball)
 * [Dependencies](#dependencies)
-* [Development](#development)
 
 Getting Started
 ===============
@@ -36,7 +37,7 @@ status.  Otherwise you are first prompted for a repository.  Read the
 short help for `magit-status-mode` (<kbd>C-h m</kbd> in the status
 buffer).
 
-Then edit and save some files files, refresh the status buffer
+Then edit and save some files, refresh the status buffer
 (<kbd>g</kbd>), stage changes (<kbd>s</kbd>) and commit (<kbd>c</kbd>)
 them.
 
@@ -44,7 +45,7 @@ For more details consult the Magit user manual.  You can read it with
 <kbd>C-u C-h i magit.info</kbd> or [on the web][manual].
 
 We can also strongly recommend [this][mastering-intro] introduction
-from the *Mastering Emacs* blog.  It even describes some new features
+from the Mastering Emacs blog.  It even describes some new features
 that are not yet documented in the manual.
 
 Magit also has a [website][website].
@@ -52,12 +53,33 @@ Magit also has a [website][website].
 Getting Help
 ============
 
-When something breaks please see the
-[curated list of known issues][knownissues] and the [FAQ][faq].  If
-that doesn't help check the list of [all open issues][issues].
+When something breaks *please* see the
+[curated list of known issues][knownissues] and the [FAQ][faq].
+If that doesn't help check the list of [all open issues][issues].
 
 If everything else fails please open a [new issue][issues] or ask for
 help on the [mailing list][group].
+
+Contributions
+=============
+
+Magit is [hosted on Github][development].  Please contribute by
+suggesting features on the [issue tracker][issues] or by making code
+contributions using [pull requests][pulls].  Before opening a pull
+request make sure to read the brief [guidelines][contributing].
+
+Please also consider supporting development using [gittip][gittip].
+Thank you!
+
+Magit was started by [Marius Vollmer][marius] and is now maintained
+by [Jonas Bernoulli][jonas].  Other Magitians (former maintainers)
+are [Nicolas Dudebout][nicolas], [Peter J. Weisberg][peter],
+[Phil Jackson][phil], [Rémi Vanicat][remi], and [Yann Hodique][yann].
+
+Many more people have [contributed code][contributors] and suggested
+features.
+
+Thanks to all of you, may (the history of) the source be with you!
 
 Installation
 ============
@@ -65,42 +87,51 @@ Installation
 Beginning with version 24.1 Emacs includes a package management
 facility known as Elpa or `package.el`.  Using an Elpa package
 repository is the easiest and recommended way to install and update
-Magit and its dependencies.
+Magit and its dependencies.  Among other things using `package.el`
+is recommended because that automatically takes care of installing
+dependencies.
+
+Magit is available from both of the two popular Elpa repositories,
+[Marmalade][marmalade] (stable releases) and [Melpa][melpa]
+(snapshots).
 
 ### Installing from Melpa
 
-Magit is available from both of the two big Elpa repositories,
-[Marmalade][marmalade] (stable releases) and [Melpa][melpa]
-(snapshots).  Because the latest Magit release is very outdated we
-recommend the use of the development version from Melpa, for the time
-being.  (If you are using the development version of Emacs, then you
-have to do so.)
+If you have already used Melpa to install some other package then
+all you have to do is:
 
-To install Magit, first enable the use of the Melpa repository by
-following the [instructions][melpa-intro] provided by the Melpa
-project.
+<kbd>M-x package-install RET magit RET</kbd>
 
-Assuming that you are using Emacs 24, haven't configured `package.el`
-yet, and want to only install Magit and its dependencies from Melpa
-(and otherwise the stable versions from Marmalade), add the following
-to you init file (`~/.emacs.el` or `~/.emacs.d/init.el`):
+This installs Magit as well as all of its dependencies and makes
+them available in the current and future Emacs sessions.
+
+If this is the first time you are using Melpa, then you have to
+configure `package.el` once.
 
 ```lisp
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives-enable-alist
-             '("melpa" "magit" "git-commit-mode" "git-rebase-mode"))
 ```
 
-(Otherwise adjust according to the linked instructions).
+Then evaluate these forms, update the package cache, and install
+Magit as above.  To update the cache use:
 
-Then install `melpa` and `magit`:
+<kbd>M-x package-refresh-contents RET</kbd>
 
-<kbd>M-x package-install RET melpa RET</kbd>
-<kbd>M-x package-install RET magit RET</kbd>
+You might also want to have a look at the more detailed
+[instructions][melpa-intro] provided by the Melpa project.  Among
+other things it explains how to install only some packages from Melpa
+and others from Marmalade, and how to use `package.el` with older
+versions of Emacs.
 
-Dependencies are installed automatically.
+### Installing from Marmalade
+
+For the time being we recommend that you install the development
+version available from Melpa, because the latest Magit release (which
+is what you get from Marmalade) is very outdated.  If you are using
+the development version of Emacs, then you have to do so, because it
+contains an incompatible change that breaks the last Magit release.
 
 ### Installing from Git
 
@@ -114,7 +145,7 @@ $ git clone git://github.com/magit/magit.git
 ```
 
 Then you should byte compile the libraries and generate the
-documentation, though that is not required.
+documentation, though that is not required:
 
 ```sh
 $ make lisp docs
@@ -127,12 +158,10 @@ tell `make` where to find them, e.g.:
 $ EFLAGS="-L /path/to/git-modes" make lisp docs
 ```
 
-If you are using an Emacs version before 24.3, then you also have to
-install `cl-lib` and tell `make` where to find it.
-
 Then add this to you init file:
 
 ```lisp
+(add-to-list 'load-path "/path/to/git-modes")
 (add-to-list 'load-path "/path/to/magit")
 (eval-after-load 'info
   '(progn (info-initialize)
@@ -140,7 +169,10 @@ Then add this to you init file:
 (require 'magit)
 ```
 
-To view available make targets:
+If you are using an Emacs version before 24.3, then you also have to
+install `cl-lib` and tell `make` as well as Emacs where to find it.
+
+To view available make targets use:
 
 ```sh
 $ make help
@@ -235,8 +267,7 @@ dependencies and install them manually.
 * `git-rebase-mode` which is part of the [git-modes][git-modes]
   repository and available as a separate package from Melpa.
 
-Optional Dependencies
----------------------
+### Optional Dependencies
 
 The following libraries build on third-party tools or git subcommands
 that are not installed by the Git base-package on some distributions:
@@ -246,29 +277,13 @@ that are not installed by the Git base-package on some distributions:
 * `magit-topgit.el` requires [`topgit`][topgit].
 * `magit-wip.el` requires [`git-wip`][git-wip].
 
-Dependencies of Tests
----------------------
+### Dependencies of Tests
 
 To run tests the following libraries are also required:
 
 * `ert` is a tool for automated testing.  It is part of Emacs
   starting with version 24.1.  You can also obtain an old version from
   the former development [repository][ert].
-
-Development
-===========
-
-Magit's canonical source repository is
-[hosted on Github][development].
-
-Magit was started by Marius Vollmer and is now collectively maintained
-by the [Magit Owners Team][owners].  [Many more people][contributors]
-have contributed.
-
-To report bugs and make feature requests please use the
-[issue tracker][issues] and Github [pull requests][pulls].  You may
-also use Magit's [Google group][group].  Before making a pull request
-please read [CONTRIBUTING.md][contributing].
 
 
 [contributing]: https://github.com/magit/magit/blob/master/CONTRIBUTING.md
@@ -285,12 +300,21 @@ please read [CONTRIBUTING.md][contributing].
 [screencast]: http://vimeo.com/2871241
 [website]: http://magit.github.io
 
+[jonas]: https://github.com/tarsius
+[marius]: https://github.com/mvollmer
+[nicolas]: https://github.com/dudebout
+[peter]: https://github.com/pjweisberg
+[phil]: https://github.com/philjackson
+[remi]: https://github.com/vanicat
+[yann]: https://github.com/sigma
+
 [cl-lib]: http://elpa.gnu.org/packages/cl-lib.html
 [emacs]: http://www.gnu.org/software/emacs
 [ert]: https://github.com/ohler/ert
 [git-wip]: https://github.com/bartman/git-wip
 [git]: http://git-scm.com
 [gitflow]: https://github.com/nvie/gitflow
+[gittip]: https://www.gittip.com/magit
 [git-modes]: https://github.com/magit/git-modes
 [marmalade]: http://marmalade-repo.org
 [mastering-intro]: http://www.masteringemacs.org/articles/2013/12/06/introduction-magit-emacs-mode-git

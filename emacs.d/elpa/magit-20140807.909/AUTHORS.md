@@ -9,19 +9,19 @@ Author
 
 - Marius Vollmer <marius.vollmer@gmail.com>
 
-Maintainers
------------
+Maintainer
+----------
 
 - Jonas Bernoulli <jonas@bernoul.li>
-- Nicolas Dudebout <nicolas.dudebout@gatech.edu>
-- Rémi Vanicat <vanicat@debian.org>
-- Yann Hodique <yann.hodique@gmail.com>
 
 Retired Maintainers
 -------------------
 
+- Nicolas Dudebout <nicolas.dudebout@gatech.edu>
 - Peter J. Weisberg <pj@irregularexpressions.net>
 - Phil Jackson <phil@shellarchive.co.uk>
+- Rémi Vanicat <vanicat@debian.org>
+- Yann Hodique <yann.hodique@gmail.com>
 
 Contributors
 ------------
@@ -37,6 +37,7 @@ Contributors
 - Andreas Fuchs <asf@boinkor.net>
 - Andreas Liljeqvist <andreas.liljeqvist@robacks.se>
 - Andreas Rottmann <a.rottmann@gmx.at>
+- Andrei Chițu <andrei.chitu1@gmail.com>
 - Andrew Kirkpatrick <andrew.kirkpatrick@adelaide.edu.au>
 - Andrey Smirnov <andrew.smirnov@gmail.com>
 - Bastian Beischer <beischer@physik.rwth-aachen.de>
@@ -48,6 +49,7 @@ Contributors
 - Chris Bernard <cebernard@gmail.com>
 - Chris Done <chrisdone@gmail.com>
 - Chris Moore <dooglus@gmail.com>
+- Chris Ring <chris@ringthis.com>
 - Christian Dietrich <christian.dietrich@informatik.uni-erlangen.de>
 - Christian Kluge <ckfrakturfreak@web.de>
 - Christopher Monsanto <chris@monsan.to>
@@ -60,6 +62,7 @@ Contributors
 - Daniel Hackney <dan@haxney.org>
 - Dan LaManna <dan.lamanna@gmail.com>
 - David Abrahams <dave@boostpro.com>
+- David Hull <david.hull@openx.com>
 - David Wallin <david.wallin@gmail.com>
 - Divye Kapoor <divye@google.com>
 - Dominique Quatravaux <domq@google.com>
@@ -76,6 +79,7 @@ Contributors
 - Hannu Koivisto <azure@iki.fi>
 - Hans-Peter Deifel <hpdeifel@gmx.de>
 - Ian Eure <ian.eure@gmail.com>
+- Jan Tatarik <jan.tatarik@xing.com>
 - Jasper St. Pierre <jstpierre@mecheye.net>
 - Jeff Bellegarde <jbellegarde@whitepages.com>
 - Jesse Alama <jesse.alama@gmail.com>
@@ -85,17 +89,21 @@ Contributors
 - Julien Danjou <julien@danjou.info>
 - Justin Caratzas <justin.caratzas@gmail.com>
 - Kimberly Wolk <kimwolk@hotmail.com>
+- Kyle Meyer <kyle@kyleam.com>
 - Laurent Laffont <laurent.laffont@gmail.com>
 - Lele Gaifax <lele@metapensiero.it>
 - Leo Liu <sdl.web@gmail.com>
 - Leonardo Etcheverry <leo@kalio.net>
 - Lluís Vilanova <vilanova@ac.upc.edu>
+- Loic Dachary <loic@dachary.org>
 - Luís Borges de Oliveira <lbo@siscog.pt>
 - Luke Amdor <luke.amdor@gmail.com>
+- Manuel Vázquez Acosta <mva.led@gmail.com>
 - Marcel Wolf <mwolf@ml1.net>
 - Marc Herbert <marc.herbert@gmail.com>
 - Marcin Bachry <hegel666@gmail.com>
 - Marco Craveiro <marco.craveiro@gmail.com>
+- Marian Schubert <marian.schubert@gooddata.com>
 - Marius Vollmer <marius.vollmer@gmail.com>
 - Mark Hepburn <Mark.Hepburn@csiro.au>
 - Matus Goljer <dota.keys@gmail.com>
@@ -117,10 +125,12 @@ Contributors
 - Pavel Holejsovsky <pavel.holejsovsky@upek.com>
 - Pekka Pessi <nospam@pessi.fi>
 - Peter J. Weisberg <pj@irregularexpressions.net>
+- Philippe Vaucher <philippe@stvs.ch>
 - Philipp Haselwarter <philipp@haselwarter.org>
 - Philip Weaver <philip.weaver@gmail.com>
 - Phil Jackson <phil@shellarchive.co.uk>
 - Pieter Praet <pieter@praet.org>
+- Prathamesh Sonpatki <csonpatki@gmail.com>
 - rabio <rabiodev@o2.pl>
 - Raimon Grau <raimonster@gmail.com>
 - Ramkumar Ramachandra <artagnon@gmail.com>
@@ -152,9 +162,13 @@ Contributors
 - Takafumi Arakaki <aka.tkf@gmail.com>
 - Teruki Shigitani <teruki.shigitani@gmail.com>
 - Thierry Volpiatto <thierry.volpiatto@gmail.com>
+- Thomas Frössman <thomasf@jossystem.se>
 - Thomas Jost <thomas.jost@gmail.com>
+- Thomas Riccardi <riccardi.thomas@gmail.com>
 - Tibor Simko <tibor.simko@cern.ch>
 - Timo Juhani Lindfors <timo.lindfors@iki.fi>
 - Ting-Yu Lin <aethanyc@gmail.com>
 - Tom Feist <shabble@metavore.org>
+- Wilfred Hughes <me@wilfred.me.uk>
+- Win Treese <treese@acm.org>
 - Yann Hodique <yann.hodique@gmail.com>
