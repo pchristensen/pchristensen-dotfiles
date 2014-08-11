@@ -1,7 +1,8 @@
 ;; https://github.com/jochu/clojure-mode
 
 (defun my-clojure-mode-hook ()
-  (rainbow-delimiters))
+  nil)
+
 
 (eval-after-load 'clojure-mode
   '(progn
