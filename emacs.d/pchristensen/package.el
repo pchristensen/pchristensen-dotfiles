@@ -15,6 +15,7 @@
 (defun set-pchristensen-packages ()
   (setq pchristensen-packages '(ag
                                 autopair
+                                cider
                                 clojure-mode
                                 clojurescript-mode
                                 coffee-mode
