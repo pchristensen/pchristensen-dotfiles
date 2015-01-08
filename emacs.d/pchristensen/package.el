@@ -34,9 +34,9 @@
                                 js2-mode
                                 magit
                                 melpa
-                                nrepl
-                                nrepl-eval-sexp-fu
-                                nrepl-ritz
+                                ;; nrepl
+                                ;; nrepl-eval-sexp-fu
+                                ;; nrepl-ritz
                                 paredit
                                 rainbow-delimiters
                                 rainbow-mode
