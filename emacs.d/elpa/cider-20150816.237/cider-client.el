@@ -93,7 +93,7 @@
   "Check if FORM is an ns form."
   (string-match-p "^[[:space:]]*\(ns\\([[:space:]]*$\\|[[:space:]]+\\)" form))
 
-(define-obsolete-function-alias 'cider-eval 'nrepl-request:eval)
+(define-obsolete-function-alias 'cider-eval 'nrepl-request:eval "0.9")
 
 (defun cider-tooling-eval (input callback &optional ns)
   "Send the request INPUT and register the CALLBACK as the response handler.
@@ -101,18 +101,40 @@ NS specifies the namespace in which to evaluate the request."
   ;; namespace forms are always evaluated in the "user" namespace
   (nrepl-request:eval input callback ns (nrepl-current-tooling-session)))
 
+(defun cider-current-repl-buffer ()
+  "The current REPL buffer.
+Return the REPL buffer given by using `cider-find-relevant-connection' and
+falling back to `nrepl-default-connection-buffer'.
+If current buffer is a file buffer, and if the REPL has siblings, instead
+return the sibling that corresponds to the current file extension.  This
+allows for evaluation to be properly directed to clj or cljs REPLs depending
+on where they come from."
+  (-when-let (repl-buf (or (cider-find-relevant-connection)
+                           (nrepl-default-connection-buffer 'no-error)))
+    ;; Take the extension of current file, or nil if there is none.
+    (let ((ext (file-name-extension (or (buffer-file-name) ""))))
+      ;; Go to the "globally" active REPL buffer.
+      (with-current-buffer repl-buf
+        ;; If it has siblings, check which of them is associated with this file
+        ;; extension.
+        (or (cdr-safe (assoc ext nrepl-sibling-buffer-alist))
+            ;; If it has no siblings, or if this extension is not specified,
+            ;; fallback on the old behavior to just return the currently active
+            ;; REPL buffer (which is probably just `repl-buf').
+            nrepl-repl-buffer)))))
+
 (defun cider-interrupt ()
   "Interrupt any pending evaluations."
   (interactive)
-  (with-current-buffer (nrepl-current-connection-buffer)
+  (with-current-buffer (cider-current-repl-buffer)
     (let ((pending-request-ids (cider-util--hash-keys nrepl-pending-requests)))
       (dolist (request-id pending-request-ids)
         (nrepl-request:interrupt request-id (cider-interrupt-handler (current-buffer)))))))
 
-(defun cider-current-repl-buffer ()
-  "The current REPL buffer."
-  (-when-let (repl-buf (nrepl-current-connection-buffer 'no-error))
-    (buffer-local-value 'nrepl-repl-buffer (get-buffer repl-buf))))
+(defun cider-current-session ()
+  "The REPL session to use for this buffer."
+  (with-current-buffer (cider-current-repl-buffer)
+    nrepl-session))
 
 (defun cider--var-choice (var-info)
   "Prompt to choose from among multiple VAR-INFO candidates, if required.
