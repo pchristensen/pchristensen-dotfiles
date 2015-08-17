@@ -6,8 +6,8 @@
 
 ;; Author: Elvio Toccalino and Elliot Glaysher and Phil Hagelberg and Doug Alcorn
 ;; URL:
-;; Version: 20140926.1008
-;; X-Original-Version: 1.0
+;; Package-Version: 20150519.1526
+;; Version: 1.0
 ;; Created: 2010-02-19
 ;; Keywords: project, convenience
 ;; EmacsWiki: FindThingsFast
@@ -80,7 +80,7 @@
 ;; use in your mode hook, `ftf-add-filetypes'. Example:
 ;;
 ;; (add-hook 'emacs-lisp-mode-hook
-;;           (lambda (ftf-add-filetypes '("*.el" "*.elisp"))))
+;;           (lambda () (ftf-add-filetypes '("*.el" "*.elisp"))))
 
 ;; If `ido-mode' is enabled, the menu will use `ido-completing-read'
 ;; instead of `completing-read'.
@@ -97,12 +97,31 @@
 
 ;;; Code:
 ;;;###autoload
-(defvar ftf-filetypes
+(defgroup find-things-fast nil
+  "Findind files in projects fast."
+  :group 'tools)
+
+(defcustom ftf-filetypes
   '("*.h" "*.hpp" "*.cpp" "*.c" "*.cc" "*.cpp" "*.inl" "*.grd" "*.idl" "*.m"
     "*.mm" "*.py" "*.sh" "*.cfg" "*SConscript" "SConscript*" "*.scons"
     "*.vcproj" "*.vsprops" "*.make" "*.gyp" "*.gypi")
   "A list of filetype patterns that grepsource will use. Obviously biased for
-chrome development.")
+chrome development."
+  :group 'find-things-fast
+  :type '(repeat string))
+
+(defcustom ftf-project-finders
+  '(ftf-find-locals-directory
+    ftf-get-top-git-dir
+    ftf-get-top-hg-dir)
+  "A list of function names that are called in order when
+determining the project root dir."
+  :group 'find-things-fast
+  :type  '(repeat (choice (const :tag "Search for directory containing .dir-locals.el or .emacs-project" ftf-find-locals-directory)
+                          (const :tag "Search for directory containing .emacs-project" ftf-find-emacs-proejct-directory)
+                          (const :tag "Search for directory containing .dir-locals.el" ftf-find-dir-locals-directory)
+                          (const :tag "Search for git repository top directory" ftf-get-top-git-dir)
+                          (const :tag "Search for Mercurial repository top directory" ftf-get-top-hg-dir))))
 
 ;;;###autoload
 (defun ftf-add-filetypes (types)
@@ -112,14 +131,15 @@ elements of list types to the list"
   (dolist (type types)
     (add-to-list 'ftf-filetypes type)))
 
-(defun ftf-find-locals-directory ()
-  "Returns the directory that contains either `.dir-locals.el' or
-  `.emacs-project' or nil if no path components contain such a directory."
+(defun ftf-find-directory-containing (&rest wanted-file-names)
+  "Returns the directory that contains any of WANTED-FILE-NAMES
+or nil if no path components contain such a directory."
   (defun parent-dir (path)
     (file-name-directory (directory-file-name path)))
   (defun dir-has-project-file (path)
-    (or (file-exists-p (concat path "/.dir-locals.el"))
-        (file-exists-p (concat path "/.emacs-project"))))
+    (remove nil
+            (mapcar (lambda (file-name) (file-exists-p (concat path "/" file-name)))
+                    wanted-file-names)))
   (let ((path default-directory)
         (return-path nil))
     (while path
@@ -132,11 +152,26 @@ elements of list types to the list"
             (t (set 'path (parent-dir path)))))
     return-path))
 
+(defun ftf-find-locals-directory ()
+  "Returns the directory that contains `.dir-locals.el' or
+`.emacs-project' or nil if no path components contain such a
+directory."
+  (ftf-find-directory-containing ".dir-locals.el" ".emacs-project"))
+
+(defun ftf-find-dir-locals-directory ()
+  "Returns the directory that contains `.dir-locals.el' or nil if
+no path components contain such a directory."
+  (ftf-find-directory-containing ".dir-locals.el"))
+
+(defun ftf-find-emacs-proejct-directory ()
+  "Returns the directory that contains `.emacs-project'
+or nil if no path components contain such a directory."
+  (ftf-find-directory-containing ".emacs-project"))
+
+;;;###autoload
 (defun ftf-project-directory ()
   "Returns what we should use as `default-directory'."
-  (or (ftf-find-locals-directory)
-      (ftf-get-top-git-dir default-directory)
-      (ftf-get-top-hg-dir default-directory)
+  (or (car (remove nil (mapcar 'funcall ftf-project-finders)))
       ;; `project-details' is defined in the `project-root.el' package. This
       ;; will be nil if it doesn't exist.
       (if (boundp 'project-details) (cdr project-details) nil)
@@ -149,10 +184,11 @@ elements of list types to the list"
           "\""))
 
 ;; Adapted from git.el 's git-get-top-dir
-(defun ftf-get-top-git-dir (dir)
+(defun ftf-get-top-git-dir (&optional dir)
   "Retrieve the top-level directory of a git tree. Returns nil on error or if
-not a git repository.."
+not a git repository."
   ;; temp buffer for errors in toplevel git rev-parse
+  (setq dir (or dir default-directory))
   (with-temp-buffer
     (if (eq 0 (call-process "git" nil t nil "rev-parse"))
         (let ((cdup (with-output-to-string
@@ -165,8 +201,9 @@ not a git repository.."
       nil)))
 
 ;; Equivalent to ftf-get-top-git-dir, only for mercurial
-(defun ftf-get-top-hg-dir (dir)
+(defun ftf-get-top-hg-dir (&optional dir)
   "Retrieve the top-level directory of a mercurial tree. Returns nil on error or if not a mercurial repository."
+  (setq dir (or dir default-directory))
   (if (executable-find "hg")
       (with-temp-buffer
 	(cd dir)
@@ -213,7 +250,7 @@ directory if none of the above is found."
   (let ((quoted (replace-regexp-in-string "\"" "\\\\\"" cmd-args))
         (git-toplevel (ftf-get-top-git-dir default-directory))
         (default-directory (ftf-project-directory))
-        (grep-use-null-device nil))
+        (null-device nil))
     (cond (git-toplevel ;; We can accelerate our grep using the git data.
            (grep (concat "git --no-pager grep --no-color -n -e \""
                          quoted
@@ -286,7 +323,9 @@ defined by the optional `project-root.el' package OR the default
 directory if none of the above is found."
   (interactive)
   (let* ((project-files (ftf-project-files-alist))
-	 (filename (if (functionp 'ido-completing-read)
+	 (filename (if (and (boundp 'ido-mode)
+			    ido-mode
+			    (functionp 'ido-completing-read))
                    (ido-completing-read "Find file in project: "
                                         (mapcar 'car project-files))
                  (completing-read "Find file in project: "
@@ -296,6 +335,7 @@ directory if none of the above is found."
         (find-file file)
       (error "No such file."))))
 
+;;;###autoload
 (defmacro with-ftf-project-root (&rest body)
   "Run BODY with `default-directory' set to what the
 find-things-fast project root. A utility macro for any of your

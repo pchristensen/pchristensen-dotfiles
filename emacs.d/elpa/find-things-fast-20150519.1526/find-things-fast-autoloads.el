@@ -3,20 +3,23 @@
 ;;; Code:
 
 
-;;;### (autoloads (ftf-gdb ftf-compile ftf-find-file ftf-grepsource
-;;;;;;  ftf-add-filetypes) "find-things-fast" "find-things-fast.el"
-;;;;;;  (21678 61448 0 0))
+;;;### (autoloads (ftf-gdb ftf-compile with-ftf-project-root ftf-find-file
+;;;;;;  ftf-grepsource ftf-project-directory ftf-add-filetypes find-things-fast)
+;;;;;;  "find-things-fast" "find-things-fast.el" (21970 3372 0 0))
 ;;; Generated autoloads from find-things-fast.el
 
-(defvar ftf-filetypes '("*.h" "*.hpp" "*.cpp" "*.c" "*.cc" "*.cpp" "*.inl" "*.grd" "*.idl" "*.m" "*.mm" "*.py" "*.sh" "*.cfg" "*SConscript" "SConscript*" "*.scons" "*.vcproj" "*.vsprops" "*.make" "*.gyp" "*.gypi") "\
-A list of filetype patterns that grepsource will use. Obviously biased for
-chrome development.")
+(let ((loads (get 'find-things-fast 'custom-loads))) (if (member '"find-things-fast" loads) nil (put 'find-things-fast 'custom-loads (cons '"find-things-fast" loads))))
 
 (autoload 'ftf-add-filetypes "find-things-fast" "\
 Makes `ftf-filetypes' local to this buffer and adds the
 elements of list types to the list
 
 \(fn TYPES)" nil nil)
+
+(autoload 'ftf-project-directory "find-things-fast" "\
+Returns what we should use as `default-directory'.
+
+\(fn)" nil nil)
 
 (autoload 'ftf-grepsource "find-things-fast" "\
 Greps the current project, leveraging local repository data
@@ -42,6 +45,13 @@ directory if none of the above is found.
 
 \(fn)" t nil)
 
+(autoload 'with-ftf-project-root "find-things-fast" "\
+Run BODY with `default-directory' set to what the
+find-things-fast project root. A utility macro for any of your
+custom functions which might want to run
+
+\(fn &rest BODY)" nil t)
+
 (autoload 'ftf-compile "find-things-fast" "\
 Run the `compile' function from the project root.
 
@@ -54,8 +64,8 @@ Run the `gdb' function from the project root.
 
 ;;;***
 
-;;;### (autoloads nil nil ("find-things-fast-pkg.el") (21678 61448
-;;;;;;  163340 0))
+;;;### (autoloads nil nil ("find-things-fast-pkg.el") (21970 3372
+;;;;;;  401264 0))
 
 ;;;***
 
