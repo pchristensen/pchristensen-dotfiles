@@ -116,9 +116,6 @@ if [[ -n "$PS1" ]] ; then
   alias lo="ls -ltcF"
 
   ## OSX
-  alias ack='ack --pager="less -FRSX"'    # F = one screen, R = raw control chars (for formatting), S = chop long lines, X = no init (leaves input when dies)
-  alias aack='ack --all'
-
   alias psgrep='ps aux | grep'
 
   function g {
