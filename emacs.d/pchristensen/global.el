@@ -63,6 +63,12 @@
 ;; enable for all programming modes
 (add-hook 'prog-mode-hook 'subword-mode)
 
+;;---------------------------------------------------------------
+;; http://endlessparentheses.com/improving-emacs-file-name-completion.html?source=rss
+
+(setq read-file-name-completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
+
 ;;----------UNIQUIFY-----------------------------------------------------------------------------------
 ;; make duplicate buffer names clearer
 (require 'uniquify)
