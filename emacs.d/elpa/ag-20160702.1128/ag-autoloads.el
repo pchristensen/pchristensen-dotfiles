@@ -6,11 +6,11 @@
 ;;;### (autoloads (ag-kill-other-buffers ag-kill-buffers ag-project-dired-regexp
 ;;;;;;  ag-project-dired ag-dired-regexp ag-dired ag-project-regexp
 ;;;;;;  ag-project-files ag-project ag-regexp ag-files ag) "ag" "ag.el"
-;;;;;;  (22174 53097 0 0))
+;;;;;;  (22397 33295 0 0))
 ;;; Generated autoloads from ag.el
 
 (autoload 'ag "ag" "\
-Search using ag in a given DIRECTORY for a given search STRING,
+Search using ag in a given DIRECTORY for a given literal search STRING,
 with STRING defaulting to the symbol under point.
 
 If called with a prefix, prompts for flags to pass to ag.
@@ -18,9 +18,9 @@ If called with a prefix, prompts for flags to pass to ag.
 \(fn STRING DIRECTORY)" t nil)
 
 (autoload 'ag-files "ag" "\
-Search using ag in a given DIRECTORY for a given search STRING,
-limited to files that match FILE-TYPE. STRING defaults to
-the symbol under point.
+Search using ag in a given DIRECTORY for a given literal search STRING,
+limited to files that match FILE-TYPE. STRING defaults to the
+symbol under point.
 
 If called with a prefix, prompts for flags to pass to ag.
 
@@ -36,14 +36,14 @@ If called with a prefix, prompts for flags to pass to ag.
 
 (autoload 'ag-project "ag" "\
 Guess the root of the current project and search it with ag
-for the given string.
+for the given literal search STRING.
 
 If called with a prefix, prompts for flags to pass to ag.
 
 \(fn STRING)" t nil)
 
 (autoload 'ag-project-files "ag" "\
-Search using ag for a given search STRING,
+Search using ag for a given literal search STRING,
 limited to files that match FILE-TYPE. STRING defaults to the
 symbol under point.
 
@@ -65,7 +65,7 @@ If called with a prefix, prompts for flags to pass to ag.
 (defalias 'ag-regexp-project-at-point 'ag-project-regexp)
 
 (autoload 'ag-dired "ag" "\
-Recursively find files in DIR matching PATTERN.
+Recursively find files in DIR matching literal search STRING.
 
 The PATTERN is matched against the full path to the file, not
 only against the file name.
@@ -75,7 +75,7 @@ The results are presented as a `dired-mode' buffer with
 
 See also `ag-dired-regexp'.
 
-\(fn DIR PATTERN)" t nil)
+\(fn DIR STRING)" t nil)
 
 (autoload 'ag-dired-regexp "ag" "\
 Recursively find files in DIR matching REGEXP.
@@ -117,7 +117,7 @@ Kill all `ag-mode' buffers other than the current buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("ag-pkg.el") (22174 53097 537800 0))
+;;;### (autoloads nil nil ("ag-pkg.el") (22397 33295 585750 0))
 
 ;;;***
 
