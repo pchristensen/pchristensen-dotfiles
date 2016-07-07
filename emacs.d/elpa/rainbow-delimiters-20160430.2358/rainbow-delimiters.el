@@ -2,13 +2,13 @@
 
 ;; Copyright (C)
 ;;   2010-2013 Jeremy Rayman
-;;   2013-2014 Fanael Linithien
+;;   2013-2016 Fanael Linithien
 ;; Author: Jeremy Rayman <opensource@jeremyrayman.com>
 ;;         Fanael Linithien <fanael4@gmail.com>
 ;; Maintainer: Fanael Linithien <fanael4@gmail.com>
 ;; Created: 2010-09-02
-;; Version: 20141221.925
-;; X-Original-Version: 2.1
+;; Version: 2.1.3
+;; Package-Version: 20160430.2358
 ;; Keywords: faces, convenience, lisp, tools
 ;; Homepage: https://github.com/Fanael/rainbow-delimiters
 
@@ -216,23 +216,22 @@ Returns t if char at loc meets one of the following conditions:
     (t
      nil))))
 
-(defconst rainbow-delimiters--delim-regex "\\s(\\|\\s)"
-  "Regex matching all opening and closing delimiters the mode highlights.")
-
 ;; Main function called by font-lock.
 (defun rainbow-delimiters--propertize (end)
   "Highlight delimiters in region between point and END.
 
 Used by font-lock for dynamic highlighting."
-  (let* ((inhibit-point-motion-hooks t)
-         (last-ppss-pos (point))
+  (let* ((last-ppss-pos (point))
          (ppss (syntax-ppss)))
-    (while (re-search-forward rainbow-delimiters--delim-regex end t)
-      (let* ((delim-pos (match-beginning 0))
+    (while (> end (progn (skip-syntax-forward "^()" end)
+                         (point)))
+      (let* ((delim-pos (point))
              (delim-syntax (syntax-after delim-pos)))
-        (setq ppss (save-excursion
-                     (parse-partial-sexp last-ppss-pos delim-pos nil nil ppss)))
+        (setq ppss (parse-partial-sexp last-ppss-pos delim-pos nil nil ppss))
         (setq last-ppss-pos delim-pos)
+        ;; `skip-syntax-forward' leaves the point at the delimiter, move past
+        ;; it.
+        (forward-char)
         (let ((delim-syntax-code (car delim-syntax)))
           (cond
            ((rainbow-delimiters--char-ineligible-p delim-pos ppss delim-syntax-code)
@@ -262,7 +261,7 @@ Used by font-lock for dynamic highlighting."
   (when rainbow-delimiters-mode
     (font-lock-add-keywords nil rainbow-delimiters--font-lock-keywords 'append)
     (set (make-local-variable 'jit-lock-contextually) t)
-    (when (or syntax-begin-function
+    (when (or (bound-and-true-p syntax-begin-function)
               (bound-and-true-p font-lock-beginning-of-syntax-function))
       ;; We're going to modify `syntax-begin-function', so flush the cache to
       ;; avoid getting cached values that used the old value.
@@ -270,7 +269,8 @@ Used by font-lock for dynamic highlighting."
     ;; `syntax-begin-function' may break the assumption we rely on that
     ;; `syntax-ppss' is exactly equivalent to `parse-partial-sexp' from
     ;; `point-min'. Just don't use it, the performance hit should be negligible.
-    (set (make-local-variable 'syntax-begin-function) nil)
+    (when (boundp 'syntax-begin-function)
+      (set (make-local-variable 'syntax-begin-function) nil))
     ;; Obsolete equivalent of `syntax-begin-function'.
     (when (boundp 'font-lock-beginning-of-syntax-function)
       (set (make-local-variable 'font-lock-beginning-of-syntax-function) nil)))
