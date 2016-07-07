@@ -45,4 +45,4 @@
 
 (load "pchristensen/bindings")
 
-(load-theme 'solarized-dark t)
+(load "pchristensen/color-theme")

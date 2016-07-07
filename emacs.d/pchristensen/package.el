@@ -19,8 +19,6 @@
                                 clojure-mode
                                 clojurescript-mode
                                 color-theme
-                                color-theme-solarized
-                                color-theme-sanityinc-tomorrow
                                 dired-details
                                 elisp-slime-nav
                                 find-things-fast
@@ -42,8 +40,6 @@
                                 undo-tree
                                 web-mode
                                 yaml-mode
-                                zen-and-art-theme
-                                zenburn-theme
                                 diminish
                                 )))
 
