@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (js2-imenu-extras-mode js2-imenu-extras-setup)
-;;;;;;  "js2-imenu-extras" "js2-imenu-extras.el" (22082 28460 0 0))
+;;;;;;  "js2-imenu-extras" "js2-imenu-extras.el" (22398 41208 0 0))
 ;;; Generated autoloads from js2-imenu-extras.el
 
 (autoload 'js2-imenu-extras-setup "js2-imenu-extras" "\
@@ -20,7 +20,7 @@ Toggle Imenu support for frameworks and structural patterns.
 ;;;***
 
 ;;;### (autoloads (js2-jsx-mode js2-mode js2-minor-mode js2-highlight-unused-variables-mode)
-;;;;;;  "js2-mode" "js2-mode.el" (22082 28460 0 0))
+;;;;;;  "js2-mode" "js2-mode.el" (22398 41208 0 0))
 ;;; Generated autoloads from js2-mode.el
 
 (autoload 'js2-highlight-unused-variables-mode "js2-mode" "\
@@ -49,14 +49,14 @@ variables (`sgml-basic-offset' et al) locally, like so:
 
   (defun set-jsx-indentation ()
     (setq-local sgml-basic-offset js2-basic-offset))
-  (add-hook 'js2-jsx-mode-hook #'set-jsx-indentation)
+  (add-hook \\='js2-jsx-mode-hook #\\='set-jsx-indentation)
 
 \(fn)" t nil)
 
 ;;;***
 
 ;;;### (autoloads nil nil ("js2-mode-pkg.el" "js2-old-indent.el")
-;;;;;;  (22082 28460 329100 0))
+;;;;;;  (22398 41208 70353 0))
 
 ;;;***
 
