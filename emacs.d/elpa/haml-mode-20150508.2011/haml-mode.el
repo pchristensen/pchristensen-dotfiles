@@ -1,14 +1,14 @@
 ;;; haml-mode.el --- Major mode for editing Haml files
 
-;; Copyright (c) 2007, 2008 Nathan Weizenbaum
+;; Copyright (c) 2007, 2008 Natalie Weizenbaum
 
-;; Author: Nathan Weizenbaum
+;; Author: Natalie Weizenbaum
 ;; URL: http://github.com/nex3/haml/tree/master
+;; Package-Version: 20150508.2011
 ;; Package-Requires: ((ruby-mode "1.0"))
-;; Version: 20141213.920
-;; X-Original-Version: DEV
+;; Version: DEV
 ;; Created: 2007-03-08
-;; By: Nathan Weizenbaum
+;; By: Natalie Weizenbaum
 ;; Keywords: markup, language, html
 
 ;;; Commentary:
@@ -682,14 +682,14 @@ See http://www.w3.org/TR/html-markup/syntax.html.")
 (defun haml-indent-p ()
   "Return t if the current line can have lines nested beneath it."
   (let ((attr-props (haml-parse-multiline-attr-hash)))
-    (when attr-props
-      (return-from haml-indent-p
-        (if (haml-unclosed-attr-hash-p) (cdr (assq 'hash-indent attr-props))
-          (list (+ (cdr (assq 'indent attr-props)) haml-indent-offset) nil)))))
-  (unless (or (haml-unnestable-tag-p))
-    (loop for opener in haml-block-openers
-          if (looking-at opener) return t
-          finally return nil)))
+    (if attr-props
+        (if (haml-unclosed-attr-hash-p)
+            (cdr (assq 'hash-indent attr-props))
+          (+ (cdr (assq 'indent attr-props)) haml-indent-offset))
+      (unless (or (haml-unnestable-tag-p))
+        (loop for opener in haml-block-openers
+              if (looking-at opener) return t
+              finally return nil)))))
 
 (defun* haml-parse-multiline-attr-hash ()
   "Parses a multiline attribute hash, and returns
