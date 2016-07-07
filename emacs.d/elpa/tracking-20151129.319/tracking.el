@@ -1,12 +1,9 @@
 ;;; tracking.el --- Buffer modification tracking
 
-;; Copyright (C) 2006, 2012 - 2014  Jorgen Schaefer
+;; Copyright (C) 2006, 2012 - 2015  Jorgen Schaefer
 
-;; Version: 20141122.1201
-;; X-Original-Version: 1.5
 ;; Author: Jorgen Schaefer <forcer@forcix.cx>
 ;; URL: https://github.com/jorgenschaefer/circe/wiki/Tracking
-;; Package-Requires: ((shorten "0.1"))
 
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,6 +33,7 @@
 
 (require 'easy-mmode)
 (require 'shorten)
+(require 'cl-lib)
 
 ;;; User customization
 (defgroup tracking nil
@@ -223,7 +221,7 @@ decided according to `tracking-faces-priorities'."
                          (list (tracking-faces-merge (buffer-name buffer)
                                                      faces)))))))
     (setq tracking-mode-line-buffers (tracking-status))
-    (sit-for 0) ;; Update mode line
+    (force-mode-line-update t)
     ))
 
 ;;;###autoload
@@ -315,7 +313,7 @@ to be ignored."
 This returns a list suitable for `mode-line-format'."
   (if (not tracking-buffers)
       ""
-    (let* ((buffer-names tracking-buffers)
+    (let* ((buffer-names (cl-remove-if-not #'get-buffer tracking-buffers))
            (shortened-names (tracking-shorten tracking-buffers))
            (result (list " [")))
       (while buffer-names
@@ -346,11 +344,13 @@ This is usually called via `window-configuration-changed-hook'."
   (interactive)
   (dolist (buffer-name tracking-buffers)
     (let ((buffer (get-buffer buffer-name)))
-      (when (or (not buffer)
-                (get-buffer-window buffer
-                                   tracking-frame-behavior))
-        (tracking-remove-buffer buffer))))
-  (setq tracking-mode-line-buffers (tracking-status)))
+      (cond
+       ((not buffer)
+        (setq tracking-buffers (delete buffer-name tracking-buffers))
+        (setq tracking-mode-line-buffers (tracking-status))
+        (sit-for 0))
+       ((get-buffer-window buffer tracking-frame-behavior)
+        (tracking-remove-buffer buffer))))))
 
 ;;; Helper functions
 (defun tracking-shorten (buffers)

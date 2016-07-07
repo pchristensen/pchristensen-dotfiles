@@ -3,9 +3,24 @@
 ;;; Code:
 
 
+;;;### (autoloads (shorten-strings) "shorten" "shorten.el" (22398
+;;;;;;  48980 0 0))
+;;; Generated autoloads from shorten.el
+
+(autoload 'shorten-strings "shorten" "\
+Takes a list of strings and returns an alist ((STRING
+. SHORTENED-STRING) ...).  Uses `shorten-split-function' to split
+the strings, and `shorten-join-function' to join shortened
+components back together into SHORTENED-STRING.  See also
+`shorten-validate-component-function'.
+
+\(fn STRINGS)" nil nil)
+
+;;;***
+
 ;;;### (autoloads (tracking-previous-buffer tracking-next-buffer
 ;;;;;;  tracking-remove-buffer tracking-add-buffer tracking-mode)
-;;;;;;  "tracking" "tracking.el" (21678 61430 0 0))
+;;;;;;  "tracking" "tracking.el" (22398 48980 0 0))
 ;;; Generated autoloads from tracking.el
 
 (defvar tracking-mode nil "\
@@ -57,7 +72,7 @@ Switch to the last active buffer.
 
 ;;;***
 
-;;;### (autoloads nil nil ("tracking-pkg.el") (21678 61430 689956
+;;;### (autoloads nil nil ("tracking-pkg.el") (22398 48980 163074
 ;;;;;;  0))
 
 ;;;***
