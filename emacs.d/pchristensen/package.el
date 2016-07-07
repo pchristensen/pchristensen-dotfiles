@@ -18,7 +18,6 @@
                                 cider
                                 clojure-mode
                                 clojurescript-mode
-                                coffee-mode
                                 color-theme
                                 color-theme-solarized
                                 color-theme-sanityinc-tomorrow
@@ -35,9 +34,6 @@
                                 js2-mode
                                 magit
                                 melpa
-                                ;; nrepl
-                                ;; nrepl-eval-sexp-fu
-                                ;; nrepl-ritz
                                 paredit
                                 rainbow-delimiters
                                 rainbow-mode
