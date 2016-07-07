@@ -5,7 +5,7 @@
 
 ;;;### (autoloads (global-hungry-delete-mode turn-on-hungry-delete-mode
 ;;;;;;  hungry-delete-mode hungry-delete-backward hungry-delete-forward)
-;;;;;;  "hungry-delete" "hungry-delete.el" (21678 61441 0 0))
+;;;;;;  "hungry-delete" "hungry-delete.el" (22398 49792 0 0))
 ;;; Generated autoloads from hungry-delete.el
 
 (autoload 'hungry-delete-forward "hungry-delete" "\
@@ -79,7 +79,7 @@ See `hungry-delete-mode' for more information on Hungry-Delete mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("hungry-delete-pkg.el") (21678 61441 826154
+;;;### (autoloads nil nil ("hungry-delete-pkg.el") (22398 49792 324912
 ;;;;;;  0))
 
 ;;;***

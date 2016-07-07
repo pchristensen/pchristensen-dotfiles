@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (diminished-modes diminish-undo diminish) "diminish"
-;;;;;;  "diminish.el" (20690 8097))
+;;;;;;  "diminish.el" (22398 49792 0 0))
 ;;; Generated autoloads from diminish.el
 
 (autoload 'diminish "diminish" "\
@@ -31,7 +31,7 @@ Restore mode-line display of diminished mode MODE to its minor-mode value.
 Do nothing if the arg is a minor mode that hasn't been diminished.
 
 Interactively, enter (with completion) the name of any diminished mode (a
-mode that was formerly a minor mode on which you invoked M-x diminish).
+mode that was formerly a minor mode on which you invoked \\[diminish]).
 To restore all diminished modes to minor status, answer `diminished-modes'.
 The response to the prompt shouldn't be quoted.  However, in Lisp code,
 the arg must be quoted as a symbol, as in (diminish-undo 'diminished-modes).
@@ -49,7 +49,8 @@ what diminished modes would be on the mode-line if they were still minor.
 
 ;;;***
 
-;;;### (autoloads nil nil ("diminish-pkg.el") (20690 8097 382291))
+;;;### (autoloads nil nil ("diminish-pkg.el") (22398 49792 623577
+;;;;;;  0))
 
 ;;;***
 
