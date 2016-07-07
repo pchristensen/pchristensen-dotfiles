@@ -4,11 +4,11 @@
 ;; Author: Kris Jenkins <krisajenkins@gmail.com>
 ;; Maintainer: Kris Jenkins <krisajenkins@gmail.com>
 ;; Keywords: clojure nrepl cheatsheet helm
+;; Package-Version: 20160707.118
 ;; URL: https://github.com/krisajenkins/clojure-cheatsheet
 ;; Created: 7th August 2013
-;; Version: 20140316.1520
-;; X-Original-Version: 0.2.2
-;; Package-Requires: ((helm "1.5.3") (cider "0.1.8"))
+;; Version: 0.4.0
+;; Package-Requires: ((helm "1.7.7") (cider "0.9.0")) ;; TODO Helm core?
 
 ;;; Commentary:
 ;;
@@ -17,9 +17,10 @@
 ;;; Code:
 
 (require 'helm)
-(require 'helm-match-plugin)
+(require 'helm-multi-match)
 (require 'nrepl-client)
 (require 'cider-interaction)
+(require 'cl-lib)
 
 (defconst clojure-cheatsheet-hierarchy
   '(("Primitives"
@@ -29,11 +30,11 @@
       ("Compare"
        (clojure.core = == not= < > <= >= compare))
       ("Bitwise"
-       (clojure.core bit-and bit-and-not bit-clear bit-flip bit-not bit-or bit-set bit-shift-left bit-shift-right bit-test bit-xor))
+       (clojure.core bit-and bit-and-not bit-clear bit-flip bit-not bit-or bit-set bit-shift-left bit-shift-right bit-test bit-xor unsigned-bit-shift-right))
       ("Cast"
        (clojure.core byte short long int float double bigdec bigint biginteger num rationalize))
       ("Test"
-       (clojure.core nil? identical? zero? pos? neg? even? odd?))
+       (clojure.core nil? some? identical? zero? pos? neg? even? odd?))
       ("Random"
        (clojure.core rand rand-int))
       ("BigDecimal"
@@ -71,7 +72,7 @@
        (clojure.core str format))
       ("Use"
        (clojure.core count get subs compare)
-       (clojure.string join escape split split-lines replace replace-first reverse re-quote-replacement))
+       (clojure.string join escape split split-lines replace replace-first reverse re-quote-replacement index-of last-index-of starts-with? ends-with? includes?))
       ("Regex"
        (:url "Java's Regex Syntax" "http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html")
        (clojure.core re-find re-seq re-matches re-pattern re-matcher re-groups)
@@ -106,7 +107,7 @@
      ("Type tests"
       (clojure.core type class coll? list? vector? set? map? seq?
                     number? integer? float? decimal? class? rational? ratio?
-                    chunked-seq? reduced? special-symbol?))
+                    chunked-seq? reduced? special-symbol? record?))
      ("Lists"
       ("Create"
        (clojure.core list list*))
@@ -144,13 +145,19 @@
       ("Create"
        (clojure.core hash-map array-map zipmap sorted-map sorted-map-by bean frequencies group-by))
       ("Examine"
-       (clojure.core get get-in contains? find keys vals))
+       (clojure.core get get-in contains? find keys vals map-entry?))
       ("'Change'"
-       (clojure.core assoc assoc-in dissoc merge merge-with select-keys update-in))
+       (clojure.core assoc assoc-in dissoc merge merge-with select-keys update update-in))
       ("Entry"
        (clojure.core key val))
       ("Sorted Maps"
-       (clojure.core rseq subseq rsubseq))))
+       (clojure.core rseq subseq rsubseq)))
+
+     ("Hashes"
+      (clojure.core hash hash-ordered-coll hash-unordered-coll mix-collection-hash))
+
+     ("Volatiles"
+      (clojure.core volatile! volatile? vreset! vswap!)))
 
     ("Functions"
      ("Create"
@@ -159,6 +166,14 @@
       (clojure.core -> ->> some-> some->> as-> cond-> cond->>))
      ("Test"
       (clojure.core fn? ifn?)))
+
+    ("Transducers"
+     ("Create"
+      (clojure.core cat dedupe distinct drop drop-while filter interpose keep keep-indexed map map-indexed mapcat partition-all partition-by random-sample remove replace take take-nth take-while))
+     ("Call"
+      (clojure.core ->Eduction eduction into sequence transduce completing run!))
+     ("Early Termination"
+      (clojure.core deref reduced reduced? ensure-reduced unreduced)))
 
     ("Other"
      ("XML"
@@ -172,7 +187,7 @@
       (:url "Documentation" "http://clojure.org/compilation")
       (clojure.core *compile-files* *compile-path* *file* *warn-on-reflection* compile gen-class gen-interface loaded-libs test))
      ("Misc"
-      (clojure.core eval force hash name *clojure-version* clojure-version *command-line-args*))
+      (clojure.core eval force name *clojure-version* clojure-version *command-line-args*))
      ("Pretty Printing"
       (clojure.pprint pprint print-table pp *print-right-margin*))
      ("Browser / Shell"
@@ -191,6 +206,9 @@
       (clojure.core with-local-vars var-get var-set alter-var-root var?))
      ("Var Validators"
       (clojure.core set-validator! get-validator)))
+
+    ("Reader Conditionals"
+     (clojure.core reader-conditional reader-conditional? tagged-literal tagged-literal?))
 
     ("Abstractions"
      ("Protocols"
@@ -250,7 +268,7 @@
        (clojure.core booleans bytes chars doubles floats ints longs shorts)))
      ("Exceptions"
       (:special throw try catch finally)
-      (clojure.core ex-info ex-data)
+      (clojure.core ex-info ex-data Throwable->map)
       (clojure.repl pst)))
 
     ("Namespaces"
@@ -340,7 +358,7 @@
 
      ("Seq in, Seq out"
       ("Get shorter"
-       (clojure.core distinct filter remove for))
+       (clojure.core distinct dedupe filter remove for))
       ("Get longer"
        (clojure.core cons conj concat lazy-cat mapcat cycle interleave interpose)))
      ("Tail-items"
@@ -348,7 +366,7 @@
      ("Head-items"
       (clojure.core take take-nth take-while butlast drop-last for))
      ("'Change'"
-      (clojure.core conj concat distinct flatten group-by partition partition-all partition-by split-at split-with filter remove replace shuffle))
+      (clojure.core conj concat distinct flatten group-by partition partition-all partition-by split-at split-with filter remove replace shuffle random-sample))
      ("Rearrange"
       (clojure.core reverse sort sort-by compare))
      ("Process items"
@@ -435,14 +453,16 @@
      (:special def if do quote var recur throw try monitor-enter monitor-exit)
      (clojure.core fn loop)
      ("Binding / Destructuring"
-      (clojure.core let fn letfn defn defmacro loop for doseq if-let when-let)))
+      (clojure.core let fn letfn defn defmacro loop for doseq if-let if-some when-let when-some)))
     ("Async"
      ("Main"
-      (clojure.core.async go go-loop <! <!! >! >!! chan put! take take! close! timeout))
+      (clojure.core.async go go-loop <! <!! >! >!! chan put! take take! close! timeout offer! poll! promise-chan))
      ("Choice"
       (clojure.core.async alt! alt!! alts! alts!! do-alts))
      ("Buffering"
       (clojure.core.async buffer dropping-buffer sliding-buffer unblocking-buffer?))
+     ("Pipelines"
+      (clojure.core.async pipeline pipeline-async pipeline-blocking))
      ("Threading"
       (clojure.core.async thread thread-call))
 
@@ -460,7 +480,7 @@
      ("Defining"
       (clojure.test deftest deftest- testing is are))
      ("Running"
-      (clojure.test run-tests run-all-tests))
+      (clojure.test run-tests run-all-tests test-vars))
      ("Fixtures"
       (clojure.test use-fixtures join-fixtures compose-fixtures))))
   "A data structure designed for the maintainer's convenience, which we
@@ -473,38 +493,42 @@ The head may be:
   A symbol, in which case it's the Clojure namespace of the symbols that follow it.
   The keyword :special, in which case it's a Clojure special form - a symbol with no
   Any other keyword, in which case it's a typed item that will be passed
-    through and handled in `clojure-cheatsheet/item-to-helm-source'.")
+    through and handled in `clojure-cheatsheet/item-to-helm-source'.
+
+Note that some many Clojure symbols appear in more than once. This is
+entirely intentional. For instance, `map` belongs in the sections on
+collections and transducers.")
 
 ;;; We could just make dash.el a dependency, but I'm not sure it's worth it for one utility macro.
 (defmacro clojure-cheatsheet/->>
-  (&rest body)
+    (&rest body)
   (let ((result (pop body)))
     (dolist (form body result)
       (setq result (append (if (sequencep form)
-							 form
+                             form
                              (list form))
                            (list result))))))
 
 (defun clojure-cheatsheet/treewalk
-  (before after node)
+    (before after node)
   "Walk a tree.  Invoke BEFORE before the walk, and AFTER after it, on each NODE."
   (clojure-cheatsheet/->> node
                           (funcall before)
                           ((lambda (new-node)
                              (if (listp new-node)
-							   (mapcar (lambda (child)
-										 (clojure-cheatsheet/treewalk before after child))
-									   new-node)
+                               (mapcar (lambda (child)
+                                         (clojure-cheatsheet/treewalk before after child))
+                                       new-node)
                                new-node)))
                           (funcall after)))
 
 (defun clojure-cheatsheet/symbol-qualifier
-  (namespace symbol)
+    (namespace symbol)
   "Given a (Clojure) namespace and a symbol, fully-qualify that symbol."
   (intern (format "%s/%s" namespace symbol)))
 
 (defun clojure-cheatsheet/string-qualifier
-  (head subnode)
+    (head subnode)
   (cond
    ((keywordp (car subnode)) (list head subnode))
    ((symbolp (car subnode)) (cons head subnode))
@@ -513,22 +537,22 @@ The head may be:
    (t (mapcar (apply-partially 'clojure-cheatsheet/string-qualifier head) subnode))))
 
 (defun clojure-cheatsheet/propagate-headings
-  (node)
+    (node)
   (clojure-cheatsheet/treewalk
    #'identity
    (lambda (item)
      (if (listp item)
-	   (destructuring-bind (head &rest tail) item
-		 (cond ((equal :special head) tail)
-			   ((keywordp head) item)
-			   ((symbolp head) (mapcar (apply-partially #'clojure-cheatsheet/symbol-qualifier head) tail))
-			   ((stringp head) (mapcar (apply-partially #'clojure-cheatsheet/string-qualifier head) tail))
-			   (t item)))
+       (cl-destructuring-bind (head &rest tail) item
+         (cond ((equal :special head) tail)
+               ((keywordp head) item)
+               ((symbolp head) (mapcar (apply-partially #'clojure-cheatsheet/symbol-qualifier head) tail))
+               ((stringp head) (mapcar (apply-partially #'clojure-cheatsheet/string-qualifier head) tail))
+               (t item)))
        item))
    node))
 
 (defun clojure-cheatsheet/flatten
-  (node)
+    (node)
   "Flatten NODE, which is a tree structure, into a list of its leaves."
   (cond
    ((not (listp node)) node)
@@ -537,7 +561,7 @@ The head may be:
    (t (list (mapcar 'clojure-cheatsheet/flatten node)))))
 
 (defun clojure-cheatsheet/group-by-head
-  (data)
+    (data)
   "Group the DATA, which should be a list of lists, by the head of each list."
   (let ((result '()))
     (dolist (item data result)
@@ -545,42 +569,42 @@ The head may be:
              (tail (cdr item))
              (current (cdr (assoc head result))))
         (if current
-		  (setf (cdr (assoc head result))
-				(append current tail))
+          (setf (cdr (assoc head result))
+                (append current tail))
           (setq result (append result (list item))))))))
 
 (defun clojure-cheatsheet/lookup-doc
-  (symbol)
-  (if (nrepl-current-connection-buffer)
-	(cider-doc-lookup symbol)
+    (symbol)
+  (if (cider-connected-p)
+    (cider-doc-lookup symbol)
     (error "nREPL not connected!")))
 
 (defun clojure-cheatsheet/lookup-src
-  (symbol)
-  (if (nrepl-current-connection-buffer)
-	(cider-src-handler symbol)
+    (symbol)
+  (if (cider-connected-p)
+    (cider-find-var nil symbol)
     (error "nREPL not connected!")))
 
 (defun clojure-cheatsheet/item-to-helm-source
-  (item)
+    (item)
   "Turn ITEM, which will be (\"HEADING\" candidates...), into a helm-source."
-  (destructuring-bind (heading &rest entries) item
+  (cl-destructuring-bind (heading &rest entries) item
     `((name . ,heading)
       (candidates ,@(mapcar (lambda (item)
                               (if (and (listp item)
                                        (keywordp (car item)))
-								(destructuring-bind (kind title value) item
-								  (cons title
-										(list kind value)))
+                                (cl-destructuring-bind (kind title value) item
+                                  (cons title
+                                        (list kind value)))
                                 item))
                             entries))
       (match . ((lambda (candidate)
-                  (helm-mp-3-match (format "%s %s" candidate ,heading)))))
+                  (helm-mm-3-match (format "%s %s" candidate ,heading)))))
       (action-transformer (lambda (action-list current-selection)
                             (if (and (listp current-selection)
                                      (eq (car current-selection) :url))
-							  '(("Browse" . (lambda (item)
-											  (helm-browse-url (cadr item)))))
+                              '(("Browse" . (lambda (item)
+                                              (helm-browse-url (cadr item)))))
                               '(("Lookup Docs" . clojure-cheatsheet/lookup-doc)
                                 ("Lookup Source" . clojure-cheatsheet/lookup-src))))))))
 
