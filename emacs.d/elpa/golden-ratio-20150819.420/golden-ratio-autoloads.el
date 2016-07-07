@@ -4,13 +4,13 @@
 
 
 ;;;### (autoloads (golden-ratio-mode golden-ratio) "golden-ratio"
-;;;;;;  "golden-ratio.el" (21678 61446 0 0))
+;;;;;;  "golden-ratio.el" (22398 39720 0 0))
 ;;; Generated autoloads from golden-ratio.el
 
 (autoload 'golden-ratio "golden-ratio" "\
 Resizes current window to the golden-ratio's size specs.
 
-\(fn)" t nil)
+\(fn &optional ARG)" t nil)
 
 (defvar golden-ratio-mode nil "\
 Non-nil if Golden-Ratio mode is enabled.
@@ -28,7 +28,7 @@ Enable automatic window resizing with golden ratio.
 
 ;;;***
 
-;;;### (autoloads nil nil ("golden-ratio-pkg.el") (21678 61446 884239
+;;;### (autoloads nil nil ("golden-ratio-pkg.el") (22398 39720 129002
 ;;;;;;  0))
 
 ;;;***
