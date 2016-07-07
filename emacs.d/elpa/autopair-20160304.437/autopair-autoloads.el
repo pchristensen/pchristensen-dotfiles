@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (autopair-global-mode autopair-mode) "autopair"
-;;;;;;  "autopair.el" (21678 61454 0 0))
+;;;;;;  "autopair.el" (22398 38909 0 0))
 ;;; Generated autoloads from autopair.el
 
 (autoload 'autopair-mode "autopair" "\
@@ -35,7 +35,7 @@ See `autopair-mode' for more information on Autopair mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("autopair-pkg.el") (21678 61454 214630
+;;;### (autoloads nil nil ("autopair-pkg.el") (22398 38909 932857
 ;;;;;;  0))
 
 ;;;***
